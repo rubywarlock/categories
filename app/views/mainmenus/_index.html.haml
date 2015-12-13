@@ -1,0 +1,7 @@
+%h1 Mainmenus#index
+%p Find me in app/views/mainmenus/_index.html.haml
+
+%p
+  = link_to "add first mainmenu", new_mainmenu_path, :class => "link-to-new-mainmenu"
+
+= nested_mainmenus @mainmenus.arrange(:order => :created_at)

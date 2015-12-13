@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jobtest</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript" src="http://dev.jquery.com/view/trunk/plugins/treeview/jquery.treeview.js"></script>
+  <script>
+    /*$(document).ready(function(){
+      $("#jquery-tree").treeview();
+    });*/
+  </script>
+</head>
+<body>
+
+<%= link_to "home", root_path %> |
+<%= link_to "users", users_path %>
+
+<%= yield %>
+
+<div class="footer">
+	<div class="footer-box">
+	  <%= debug(params) if Rails.env.development? %>
+	</div>
+
+</div>
+
+</body>
+</html>

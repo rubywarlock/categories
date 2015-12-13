@@ -1,0 +1,21 @@
+<%= form_for("users", url: users_path, method: :get ) do |f| %>
+	<%= f.fields_for "from" do |from| %>
+    <div style="width:245px; float:left;">
+      <div class="find-field"><strong>age</strong><%= from.text_field :age %></div>
+      <div class="find-field"><strong>pay</strong><%= from.text_field :pay %></div>
+      <div class="find-field"><strong>stature</strong><%= from.text_field :stature %></div>
+      <div class="find-field"><strong>weigh</strong><%= from.text_field :weigh %></div>
+    </div>
+	<% end %>
+
+	<%= f.fields_for "to" do |to| %>
+    <div style="width:245px; float:left;">
+      <div class="find-field"><strong>to age</strong><%= to.text_field :age %></div>
+      <div class="find-field"><strong>to pay</strong><%= to.text_field :pay %></div>
+      <div class="find-field"><strong>to stature</strong><%= to.text_field :stature %></div>
+      <div class="find-field"><strong>to weigh</strong><%= to.text_field :weigh %></div>
+	  </div>
+	<% end %>
+
+  <%= f.submit "find" %><br/>
+<% end %>

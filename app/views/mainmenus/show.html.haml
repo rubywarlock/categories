@@ -1,0 +1,18 @@
+%div{:class => "info"}
+	%h4
+		Mainmenus#show
+		Find me in app/views/mainmenus/show.html.haml
+
+
+- flash.each do |name, msg|
+	= content_tag :div, msg, class: "alert alert-info"
+
+
+%h4
+	= @show_mainmenu.title
+
+= @show_mainmenu.text.html_safe
+%br
+= link_to "Edit", edit_mainmenu_path
+= " | "
+= link_to "Add mainmenu", new_mainmenu_path(:parent_id => @show_mainmenu)

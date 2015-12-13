@@ -1,0 +1,13 @@
+div class="info"
+  h4 Pages#new
+     Find me in app/views/pages/new.html.slim
+
+= form_for @new_page do |form|
+	- if !@g.nil?
+		= form.hidden_field :g, name: :gen_info, value: @g
+	= form.text_field :title
+	br
+	= form.text_area :text, :class => "textarea"
+	br
+
+	= form.submit "create page"

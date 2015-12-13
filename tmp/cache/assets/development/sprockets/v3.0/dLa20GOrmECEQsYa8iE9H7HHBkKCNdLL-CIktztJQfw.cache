@@ -1,0 +1,11 @@
+I"Ý(function() {
+  $(document).ready(function() {
+    return $('#jquery-tree').treeview({
+      toggle: function() {
+        console.log('%s was toggled.', $(this).find('>div').text());
+      }
+    });
+  });
+
+}).call(this);
+:ET

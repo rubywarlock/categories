@@ -1,0 +1,11 @@
+I"(function() {
+  $(document).ready(function() {
+    var js_show;
+    js_show = function(acc, id) {
+      $('.dropdown-menu .dropdown-open').removeClass('dropdown-open');
+      $('.dropdown-menu #' + id).addClass('dropdown-open');
+    };
+  });
+
+}).call(this);
+:ET

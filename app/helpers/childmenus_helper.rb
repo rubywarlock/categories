@@ -1,0 +1,2 @@
+module ChildmenusHelper
+end

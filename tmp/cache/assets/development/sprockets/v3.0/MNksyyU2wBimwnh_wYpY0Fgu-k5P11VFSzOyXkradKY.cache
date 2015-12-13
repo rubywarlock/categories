@@ -1,0 +1,9 @@
+I"Î(function() {
+  js_show(id)(function() {
+    $('.dropdown-menu').removeClass('dropdown-open');
+    $('.dropdown-menu').addClass('dropdown-close');
+    $(id).addClass('dropdown-open');
+  });
+
+}).call(this);
+:ET

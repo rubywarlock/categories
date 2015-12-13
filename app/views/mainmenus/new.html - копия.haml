@@ -1,0 +1,1 @@
+%div{:class => "info"}  %h4    Pages#new    Find me in app/views/pages/new.html.erb= form_for @page do |form|  = form.hidden_field :parent_id  = form.text_field :title  %br  = form.text_area :text, :class => "textarea"  %br  = form.submit "create page"

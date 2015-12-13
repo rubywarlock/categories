@@ -1,0 +1,68 @@
+// Place all the styles related to the FirstPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main-title{
+	cursor: pointer;
+	&:active{
+		color: #00a2ff;
+	}
+}
+
+.parent-menu{
+	font-size: 14px;
+	color: #2f2f2f;
+	.children-menu{
+		font-size: 12px;
+		color: #5d5d5d;
+	}
+}
+
+.link-to-new-mainmenu, a:visited, .link-to-new-mainmenu:visited{
+	font-size: 11px;
+	font-weight:bold;
+	color: #3f3f3f;
+}
+
+.link-to-new-mainmenu:hover{
+	background:#FFF;
+	color: #747474;
+}
+
+.li-button-to-new-mainmenu{
+	list-style: none;
+	margin-left:20px;
+}
+
+.mainmenu_created_at{
+	font-size:10px;
+}
+
+.links_separator{
+	font-size: 10px;
+	color: #555555;
+}
+
+.nested_mainmenus {
+	margin-left: 30px;
+}
+
+.nested_mainmenus #title{
+
+}
+
+.nested_mainmenus .nested_mainmenus .nested_mainmenus {
+	//margin-left: 0;
+}
+
+.site-dropdown-menu{
+	display: none;
+}
+
+.site-dropdown-close{
+
+}
+
+.site-dropdown-open{
+	display: block !important;
+}

@@ -1,0 +1,14 @@
+I"ž(function() {
+  var root;
+
+  root = typeof exports !== "undefined" && exports !== null ? exports : this;
+
+  root.js_show = function(id) {
+    $('.site-dropdown-menu .site-dropdown-open').toggleClass('site-dropdown-close');
+    $('.dropdown-menu .site-dropdown-open').toggleClass('site-dropdown-open');
+    $(id).toggleClass('site-dropdown-close');
+    $(id).toggleClass('site-dropdown-open');
+  };
+
+}).call(this);
+:ET
