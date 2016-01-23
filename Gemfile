@@ -16,15 +16,15 @@ gem 'uglifier'#, '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails'#, '~> 4.1.0'
 
-gem 'closure_tree'
+#gem 'closure_tree'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'haml-rails'
-#gem "slim-rails"
+#gem 'haml-rails'
+gem 'slim-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -52,9 +52,9 @@ end
 
 group :development, :test do
 	gem 'sqlite3'
-	gem 'factory_girl_rails'#, '4.2.1'
+	#gem 'factory_girl_rails'#, '4.2.1'
 	#gem 'database_cleaner', github: 'bmabey/database_cleaner'
-	gem 'faker'#, '1.1.2'
+	#gem 'faker'#, '1.1.2'
 end
 
 group :doc do

@@ -1,9 +1,9 @@
-%div.info
-  %h4
-    Contents#edit
-    %br
-    Find me in app/views/contents/edit.html.erb
-    %br
+.info
+  h4
+    | Contents#edit
+    br
+    | Find me in app/views/contents/edit.html.erb
+    br
   = link_to "Back", @edit_content.childmenu
 
 = form_for @edit_content do |form|
@@ -14,7 +14,7 @@
     = form.cktext_area :title, :class => 'someclass', :ckeditor => {:language => 'ru'}
     = cktext_area :content, :info, :cols => 40, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'}
 
-  %div.actions
-    %p
-      %br
+  .actions
+    p
+      br
       = form.submit "update"

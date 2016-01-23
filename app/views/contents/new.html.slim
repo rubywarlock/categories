@@ -1,8 +1,8 @@
-%div.info
-  %h4
-    Contents#new
-    %br
-    Find me in app/views/contents/new.html.erb
+.info
+  h4
+    | Contents#new
+    br
+    | Find me in app/views/contents/new.html.erb
 
 = form_for @new_content do |form|
   = form.hidden_field :childmenu_id, :value => @new_content.childmenu_id
@@ -13,7 +13,7 @@
     = form.cktext_area :title, :class => 'someclass', :ckeditor => {:language => 'ru'}
     = cktext_area :content, :info, :cols => 40, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'}
 
-  %div.actions
-    %p
-      %br
+  .actions
+    p
+      br
       = form.submit "create Content"

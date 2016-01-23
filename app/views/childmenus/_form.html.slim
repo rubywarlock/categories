@@ -1,12 +1,12 @@
 = form_for @childmenu do |f|
   - @childmenu.errors.full_messages.each do |msg|
-    %p= msg
+    p= msg
   = f.hidden_field :mainmenu_id, :value => @childmenu.mainmenu_id
-  %p
+  p
     = f.label :title, "title"
     = f.text_field :title, :rows => 8
 
     = f.label :text, "New text"
     = f.text_area :text, :rows => 8
-  %p
+  p
     = f.submit "Create"
