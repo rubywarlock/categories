@@ -23,10 +23,10 @@ class ChildmenusController < ApplicationController
   def update
   end
 
-  def desrtoy
+  def destroy
     @delete = Childmenu.find(params[:id])
     if @delete.destroy
-      redirect_to new_childmenus_path, notice: 'Childmenu was successfully deleted.'
+      redirect_to root_path#new_childmenus_path, notice: 'Childmenu was successfully deleted.'
     else
       flash[:success] = 'Delete Childmenu error'
       render 'new'

@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141212103300) do
+ActiveRecord::Schema.define(version: 20160127091039) do
 
-  create_table "childmenus", force: true do |t|
+  create_table "childmenus", force: :cascade do |t|
     t.integer  "mainmenu_id"
-    t.string   "title"
-    t.string   "text"
+    t.string   "title",       limit: 255
+    t.string   "text",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "ckeditor_assets", force: true do |t|
-    t.string   "data_file_name",               null: false
-    t.string   "data_content_type"
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",    limit: 255, null: false
+    t.string   "data_content_type", limit: 255
     t.integer  "data_file_size"
     t.integer  "assetable_id"
     t.string   "assetable_type",    limit: 30
@@ -37,27 +37,26 @@ ActiveRecord::Schema.define(version: 20141212103300) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
 
-  create_table "contents", force: true do |t|
+  create_table "contents", force: :cascade do |t|
     t.integer  "childmenu_id"
-    t.string   "title"
+    t.string   "title",        limit: 255
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "mainmenus", force: true do |t|
-    t.string   "title"
+  create_table "mainmenus", force: :cascade do |t|
+    t.string   "title",          limit: 255
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "parent_id"
-    t.integer  "level",      default: 0
-    t.string   "ancestry"
+    t.integer  "ancestry_depth",             default: 0
+    t.string   "ancestry",       limit: 255
+    t.string   "style_class"
   end
 
-  add_index "mainmenus", ["ancestry"], name: "index_mainmenus_on_ancestry"
-
-  create_table "page_hierarchies", id: false, force: true do |t|
+  create_table "page_hierarchies", id: false, force: :cascade do |t|
     t.integer "ancestor_id",   null: false
     t.integer "descendant_id", null: false
     t.integer "generations",   null: false
@@ -66,7 +65,7 @@ ActiveRecord::Schema.define(version: 20141212103300) do
   add_index "page_hierarchies", ["ancestor_id", "descendant_id", "generations"], name: "page_anc_desc_udx", unique: true
   add_index "page_hierarchies", ["descendant_id"], name: "page_desc_idx"
 
-  create_table "relationships", force: true do |t|
+  create_table "relationships", force: :cascade do |t|
     t.integer  "parent_id"
     t.integer  "derived_id"
     t.datetime "created_at"
@@ -78,7 +77,7 @@ ActiveRecord::Schema.define(version: 20141212103300) do
   add_index "relationships", ["parent_id", "derived_id"], name: "index_relationships_on_parent_id_and_derived_id", unique: true
   add_index "relationships", ["parent_id"], name: "index_relationships_on_parent_id"
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.integer  "age"
     t.integer  "pay"
     t.integer  "stature"
