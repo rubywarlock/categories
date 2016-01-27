@@ -1,0 +1,14 @@
+<% if mainmenu.childmenus.count > 0 %>
+  <div class="childmenu-class">
+    <%#= mainmenu.text %>
+    <ul>
+      <% mainmenu.childmenus.each do |cm| %>
+        <li>
+          <%= link_to cm.title, cm %>
+          <span class="links_separator"> | </span>
+          <%= link_to "delete", cm, :method => :delete, class: "link-to-new-mainmenu" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

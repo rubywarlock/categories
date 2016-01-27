@@ -1,7 +1,7 @@
 = form_for @mainmenu do |f|
   - @mainmenu.errors.full_messages.each do |msg|
     p= msg
-  = f.hidden_field :parent_id, :value => @mainmenu.parent_id
+  = f.hidden_field :parent, :value => @parent
   p
     = f.label :title, "title"
     = f.text_field :title, :rows => 8

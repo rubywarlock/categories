@@ -1,22 +1,10 @@
-<div id="main-title-<%= mainmenu.id %>" class="browser" style="font-weight: bold;">
-  <span class="main-title" onclick="js_show('#site-dropdown-menu-<%= mainmenu.id %>')">
-    <%= mainmenu.title %>
-  </span>
-  <div class="test">
-    <span class="mainmenu_created_at"><%= mainmenu.created_at.strftime("%m %d %Y") %></span>
-    <%= link_to "Add mainmenu", new_mainmenu_path(:parent_id => mainmenu), class: "link-to-new-mainmenu" %>
-    <span class="links_separator"> | </span>
-    <%= link_to "Add childmenu", new_childmenu_path(:parent_id => mainmenu), class: "link-to-new-mainmenu" %>
-    <span class="links_separator"> | </span>
-    <%= link_to "Destroy", mainmenu, :confirm => "Are you sure?", :method => :delete, class: "link-to-new-mainmenu" %>
+<% mainmenus.map do |mainmenu, sub_mainmenus| %>
+
+  <div id="main-title-<%= mainmenu.id %>" class="<%= mainmenu.style_class %>">
+    <span class="main-title" onclick=""><%= mainmenu.title %></span>
+		<%= render "mainmenus/main_menu_tools", :mainmenu => mainmenu %>
+	  <%= render "mainmenus/childmenus", :mainmenu => mainmenu %>
+    <%= nested_mainmenus(sub_mainmenus) %>
   </div>
 
-  <div class="childmenu-class">
-    <%#= mainmenu.text %>
-    <ul>
-      <% mainmenu.childmenus.each do |cm| %>
-        <li><%= link_to cm.title, cm %></li>
-      <% end %>
-    </ul>
-  </div>
-</div>
+<% end %>
