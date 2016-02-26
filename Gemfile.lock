@@ -197,7 +197,9 @@ DEPENDENCIES
   sass-rails
   slim-rails
   sqlite3
-  thread_safe
   turbolinks
   uglifier
   will_paginate (= 3.0.4)
+
+BUNDLED WITH
+   1.10.6

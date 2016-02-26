@@ -58787,3 +58787,1024 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-38fb34ce99c858f3fce6c34ef94cafb634d142e00d7081d21c47936d8f4827ca.js?body=1" for 127.0.0.1 at 2016-01-27 15:58:34 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='idx_ckeditor_assetable' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='idx_ckeditor_assetable' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='idx_ckeditor_assetable_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='idx_ckeditor_assetable_type' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='page_desc_idx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='page_desc_idx' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='page_anc_desc_udx' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='page_anc_desc_udx' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_parent_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_parent_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_parent_id_and_derived_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_parent_id_and_derived_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_derived_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_derived_id' AND type='index'
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-01-27 19:14:01 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#index as HTML
+  [1m[35mMainmenu Load (0.3ms)[0m  SELECT "mainmenus".* FROM "mainmenus"  ORDER BY (case when mainmenus.ancestry is null then 0 else 1 end), mainmenus.ancestry, created_at
+  Rendered mainmenus/_main_menu_tools.html.erb (1.3ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 36]]
+  Rendered mainmenus/_childmenus.html.erb (19.0ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.9ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 53]]
+  Rendered mainmenus/_childmenus.html.erb (0.9ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 55]]
+  Rendered mainmenus/_childmenus.html.erb (0.8ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (4.8ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.5ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 54]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (13.9ms)
+  Rendered mainmenus/_mainmenu.html.erb (38.5ms)
+  Rendered home_pages/index.html.slim within layouts/application (64.1ms)
+Completed 200 OK in 4335ms (Views: 4320.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.self-f9e7c1541e1b8783561468c59162bd896007380f5a3799ef2169d3a3fdf40bed.css?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/home_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/childmenus.self-3d84403c4540733696062649f2e53a168152e5619aba0248f2b799529709b704.css?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/relationships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/gen.self-28233e37ce6b0c3653003fd2c6fc3424c2a17188e6d58aa2fa0e6e24e1c03471.css?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/contents.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/scaffolds.self-6f6cbc9946df589e147e81356d534b0b87a23725cb1a85aebe80857aede8984a.css?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/mainmenus.self-3c8ae9d00f355bcfb238100eddecc90359ddd081dd9afccf349d8849bb59e8ad.css?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/ckeditor/init.self-2f3e80b764bc18c9362e6f3326e1f32d4a8bdceff67345a3453a93b111626ff3.js?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/ckeditor/ckeditor.self-d44511d44b2c01b6466fda92764336001e42a860f53ed63541c0f871afed5d7a.js?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/childmenus.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/contents.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/home_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/mainmenus.self-c402879054b8a4eed8c5b0f9a3f69130b6345eb5e01a80c939368a72d4c4d8d9.js?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/relationships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/textarea.self-6b0c77e4800f51b09bad2993f431c3bd600c60529366c60f18225210e6e1387a.js?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/assets/application.self-38fb34ce99c858f3fce6c34ef94cafb634d142e00d7081d21c47936d8f4827ca.js?body=1" for 127.0.0.1 at 2016-01-27 19:14:06 +0500
+
+
+Started GET "/" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+Processing by HomePagesController#index as HTML
+  [1m[36mMainmenu Load (0.2ms)[0m  [1mSELECT "mainmenus".* FROM "mainmenus"  ORDER BY (case when mainmenus.ancestry is null then 0 else 1 end), mainmenus.ancestry, created_at[0m
+  Rendered mainmenus/_main_menu_tools.html.erb (0.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 36]]
+  Rendered mainmenus/_childmenus.html.erb (0.8ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.3ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 53]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.3ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 55]]
+  Rendered mainmenus/_childmenus.html.erb (0.4ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (3.1ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 54]]
+  Rendered mainmenus/_childmenus.html.erb (0.9ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (10.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (14.3ms)
+  Rendered home_pages/index.html.slim within layouts/application (16.3ms)
+Completed 200 OK in 102ms (Views: 100.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-f9e7c1541e1b8783561468c59162bd896007380f5a3799ef2169d3a3fdf40bed.css?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/home_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/childmenus.self-3d84403c4540733696062649f2e53a168152e5619aba0248f2b799529709b704.css?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/contents.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/mainmenus.self-cef87d84cc045dc565141c7dc8fed20ca8f3ed18028a56532cbbe0e73f4bb67d.css?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/gen.self-28233e37ce6b0c3653003fd2c6fc3424c2a17188e6d58aa2fa0e6e24e1c03471.css?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/relationships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/scaffolds.self-6f6cbc9946df589e147e81356d534b0b87a23725cb1a85aebe80857aede8984a.css?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/ckeditor/init.self-2f3e80b764bc18c9362e6f3326e1f32d4a8bdceff67345a3453a93b111626ff3.js?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/ckeditor/ckeditor.self-d44511d44b2c01b6466fda92764336001e42a860f53ed63541c0f871afed5d7a.js?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/contents.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/childmenus.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/home_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/mainmenus.self-c402879054b8a4eed8c5b0f9a3f69130b6345eb5e01a80c939368a72d4c4d8d9.js?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/textarea.self-6b0c77e4800f51b09bad2993f431c3bd600c60529366c60f18225210e6e1387a.js?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/relationships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/assets/application.self-38fb34ce99c858f3fce6c34ef94cafb634d142e00d7081d21c47936d8f4827ca.js?body=1" for 127.0.0.1 at 2016-01-27 19:21:54 +0500
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 09:08:03 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#index as HTML
+  [1m[35mMainmenu Load (0.2ms)[0m  SELECT "mainmenus".* FROM "mainmenus"  ORDER BY (case when mainmenus.ancestry is null then 0 else 1 end), mainmenus.ancestry, created_at
+  Rendered mainmenus/_main_menu_tools.html.erb (1.7ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 36]]
+  Rendered mainmenus/_childmenus.html.erb (18.6ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 53]]
+  Rendered mainmenus/_childmenus.html.erb (0.7ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (1.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 55]]
+  Rendered mainmenus/_childmenus.html.erb (1.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (4.7ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.4ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 54]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (11.7ms)
+  Rendered mainmenus/_mainmenu.html.erb (37.4ms)
+  Rendered home_pages/index.html.slim within layouts/application (65.8ms)
+Completed 200 OK in 814ms (Views: 801.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-f9e7c1541e1b8783561468c59162bd896007380f5a3799ef2169d3a3fdf40bed.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/childmenus.self-3d84403c4540733696062649f2e53a168152e5619aba0248f2b799529709b704.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/relationships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/contents.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/home_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/gen.self-28233e37ce6b0c3653003fd2c6fc3424c2a17188e6d58aa2fa0e6e24e1c03471.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/mainmenus.self-cef87d84cc045dc565141c7dc8fed20ca8f3ed18028a56532cbbe0e73f4bb67d.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/scaffolds.self-6f6cbc9946df589e147e81356d534b0b87a23725cb1a85aebe80857aede8984a.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/ckeditor/init.self-2f3e80b764bc18c9362e6f3326e1f32d4a8bdceff67345a3453a93b111626ff3.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/ckeditor/ckeditor.self-d44511d44b2c01b6466fda92764336001e42a860f53ed63541c0f871afed5d7a.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/childmenus.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/contents.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/home_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/mainmenus.self-c402879054b8a4eed8c5b0f9a3f69130b6345eb5e01a80c939368a72d4c4d8d9.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/relationships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/textarea.self-6b0c77e4800f51b09bad2993f431c3bd600c60529366c60f18225210e6e1387a.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/assets/application.self-38fb34ce99c858f3fce6c34ef94cafb634d142e00d7081d21c47936d8f4827ca.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:04 +0500
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+Processing by HomePagesController#index as HTML
+  [1m[36mMainmenu Load (0.1ms)[0m  [1mSELECT "mainmenus".* FROM "mainmenus"  ORDER BY (case when mainmenus.ancestry is null then 0 else 1 end), mainmenus.ancestry, created_at[0m
+  Rendered mainmenus/_main_menu_tools.html.erb (0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 36]]
+  Rendered mainmenus/_childmenus.html.erb (0.8ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 53]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.3ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 55]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (3.4ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 54]]
+  Rendered mainmenus/_childmenus.html.erb (0.6ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (10.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (14.4ms)
+  Rendered home_pages/index.html.slim within layouts/application (16.1ms)
+Completed 200 OK in 45ms (Views: 44.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-f9e7c1541e1b8783561468c59162bd896007380f5a3799ef2169d3a3fdf40bed.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/contents.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/gen.self-28233e37ce6b0c3653003fd2c6fc3424c2a17188e6d58aa2fa0e6e24e1c03471.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/childmenus.self-3d84403c4540733696062649f2e53a168152e5619aba0248f2b799529709b704.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/home_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/relationships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/mainmenus.self-cef87d84cc045dc565141c7dc8fed20ca8f3ed18028a56532cbbe0e73f4bb67d.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/scaffolds.self-6f6cbc9946df589e147e81356d534b0b87a23725cb1a85aebe80857aede8984a.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/ckeditor/init.self-2f3e80b764bc18c9362e6f3326e1f32d4a8bdceff67345a3453a93b111626ff3.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/ckeditor/ckeditor.self-d44511d44b2c01b6466fda92764336001e42a860f53ed63541c0f871afed5d7a.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/childmenus.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/contents.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/home_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/mainmenus.self-c402879054b8a4eed8c5b0f9a3f69130b6345eb5e01a80c939368a72d4c4d8d9.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/relationships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/textarea.self-6b0c77e4800f51b09bad2993f431c3bd600c60529366c60f18225210e6e1387a.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/assets/application.self-38fb34ce99c858f3fce6c34ef94cafb634d142e00d7081d21c47936d8f4827ca.js?body=1" for 127.0.0.1 at 2016-02-05 09:08:17 +0500
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-05 09:08:48 +0500
+Processing by HomePagesController#index as HTML
+  [1m[35mMainmenu Load (0.2ms)[0m  SELECT "mainmenus".* FROM "mainmenus"  ORDER BY (case when mainmenus.ancestry is null then 0 else 1 end), mainmenus.ancestry, created_at
+  Rendered mainmenus/_main_menu_tools.html.erb (0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 36]]
+  Rendered mainmenus/_childmenus.html.erb (1.0ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 53]]
+  Rendered mainmenus/_childmenus.html.erb (0.7ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.3ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 55]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (3.4ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.4ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 54]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (10.2ms)
+  Rendered mainmenus/_mainmenu.html.erb (14.4ms)
+  Rendered home_pages/index.html.slim within layouts/application (16.1ms)
+Completed 200 OK in 49ms (Views: 48.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 10:17:33 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#index as HTML
+  [1m[35mMainmenu Load (0.2ms)[0m  SELECT "mainmenus".* FROM "mainmenus"  ORDER BY (case when mainmenus.ancestry is null then 0 else 1 end), mainmenus.ancestry, created_at
+  Rendered mainmenus/_main_menu_tools.html.erb (1.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 36]]
+  Rendered mainmenus/_childmenus.html.erb (22.9ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.7ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 53]]
+  Rendered mainmenus/_childmenus.html.erb (0.6ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.3ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 55]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (3.3ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 54]]
+  Rendered mainmenus/_childmenus.html.erb (0.6ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (10.6ms)
+  Rendered mainmenus/_mainmenu.html.erb (40.1ms)
+  Rendered home_pages/index.html.slim within layouts/application (65.1ms)
+Completed 200 OK in 759ms (Views: 744.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-02-25 10:17:36 +0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" LIMIT 25 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-02-25 10:17:38 +0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (34.0ms)
+  Rendered users/new.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 72ms (Views: 68.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 3], ["pay", 280840], ["stature", 37], ["weigh", 74], ["created_at", "2016-02-25 05:18:55.160395"], ["updated_at", "2016-02-25 05:18:55.160395"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 73], ["pay", 105509], ["stature", 0], ["weigh", 75], ["created_at", "2016-02-25 05:18:55.165660"], ["updated_at", "2016-02-25 05:18:55.165660"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 70], ["pay", 138376], ["stature", 173], ["weigh", 148], ["created_at", "2016-02-25 05:18:55.167363"], ["updated_at", "2016-02-25 05:18:55.167363"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 85], ["pay", 42519], ["stature", 74], ["weigh", 112], ["created_at", "2016-02-25 05:18:55.168654"], ["updated_at", "2016-02-25 05:18:55.168654"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 9], ["pay", 28996], ["stature", 27], ["weigh", 147], ["created_at", "2016-02-25 05:18:55.169967"], ["updated_at", "2016-02-25 05:18:55.169967"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 44], ["pay", 548136], ["stature", 34], ["weigh", 160], ["created_at", "2016-02-25 05:18:55.171276"], ["updated_at", "2016-02-25 05:18:55.171276"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 96], ["pay", 435605], ["stature", 200], ["weigh", 197], ["created_at", "2016-02-25 05:18:55.172809"], ["updated_at", "2016-02-25 05:18:55.172809"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 84], ["pay", 78678], ["stature", 174], ["weigh", 62], ["created_at", "2016-02-25 05:18:55.174230"], ["updated_at", "2016-02-25 05:18:55.174230"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 87], ["pay", 950514], ["stature", 169], ["weigh", 102], ["created_at", "2016-02-25 05:18:55.175510"], ["updated_at", "2016-02-25 05:18:55.175510"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 1], ["pay", 218859], ["stature", 135], ["weigh", 26], ["created_at", "2016-02-25 05:18:55.176816"], ["updated_at", "2016-02-25 05:18:55.176816"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 89], ["pay", 28222], ["stature", 58], ["weigh", 159], ["created_at", "2016-02-25 05:18:55.178353"], ["updated_at", "2016-02-25 05:18:55.178353"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 72], ["pay", 826756], ["stature", 200], ["weigh", 177], ["created_at", "2016-02-25 05:18:55.179732"], ["updated_at", "2016-02-25 05:18:55.179732"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 45], ["pay", 822762], ["stature", 122], ["weigh", 3], ["created_at", "2016-02-25 05:18:55.181235"], ["updated_at", "2016-02-25 05:18:55.181235"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 85], ["pay", 956196], ["stature", 107], ["weigh", 73], ["created_at", "2016-02-25 05:18:55.182659"], ["updated_at", "2016-02-25 05:18:55.182659"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 2], ["pay", 209652], ["stature", 136], ["weigh", 103], ["created_at", "2016-02-25 05:18:55.184327"], ["updated_at", "2016-02-25 05:18:55.184327"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 53], ["pay", 566896], ["stature", 23], ["weigh", 121], ["created_at", "2016-02-25 05:18:55.186343"], ["updated_at", "2016-02-25 05:18:55.186343"]]
+  [1m[35m (0.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 46], ["pay", 11039], ["stature", 51], ["weigh", 16], ["created_at", "2016-02-25 05:18:55.187705"], ["updated_at", "2016-02-25 05:18:55.187705"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 49], ["pay", 722871], ["stature", 152], ["weigh", 86], ["created_at", "2016-02-25 05:18:55.194017"], ["updated_at", "2016-02-25 05:18:55.194017"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 14], ["pay", 283799], ["stature", 171], ["weigh", 122], ["created_at", "2016-02-25 05:18:55.195797"], ["updated_at", "2016-02-25 05:18:55.195797"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 31], ["pay", 736545], ["stature", 30], ["weigh", 162], ["created_at", "2016-02-25 05:18:55.197406"], ["updated_at", "2016-02-25 05:18:55.197406"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 51], ["pay", 900724], ["stature", 69], ["weigh", 140], ["created_at", "2016-02-25 05:18:55.199086"], ["updated_at", "2016-02-25 05:18:55.199086"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 38], ["pay", 562826], ["stature", 145], ["weigh", 134], ["created_at", "2016-02-25 05:18:55.200606"], ["updated_at", "2016-02-25 05:18:55.200606"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 56], ["pay", 821873], ["stature", 144], ["weigh", 155], ["created_at", "2016-02-25 05:18:55.202225"], ["updated_at", "2016-02-25 05:18:55.202225"]]
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 53], ["pay", 320282], ["stature", 22], ["weigh", 161], ["created_at", "2016-02-25 05:18:55.203765"], ["updated_at", "2016-02-25 05:18:55.203765"]]
+  [1m[35m (0.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 0], ["pay", 876858], ["stature", 146], ["weigh", 57], ["created_at", "2016-02-25 05:18:55.205181"], ["updated_at", "2016-02-25 05:18:55.205181"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 73], ["pay", 546960], ["stature", 34], ["weigh", 172], ["created_at", "2016-02-25 05:18:55.206572"], ["updated_at", "2016-02-25 05:18:55.206572"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 4], ["pay", 70406], ["stature", 68], ["weigh", 162], ["created_at", "2016-02-25 05:18:55.207854"], ["updated_at", "2016-02-25 05:18:55.207854"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 55], ["pay", 534756], ["stature", 118], ["weigh", 45], ["created_at", "2016-02-25 05:18:55.209178"], ["updated_at", "2016-02-25 05:18:55.209178"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 11], ["pay", 824053], ["stature", 8], ["weigh", 103], ["created_at", "2016-02-25 05:18:55.210539"], ["updated_at", "2016-02-25 05:18:55.210539"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 91], ["pay", 589403], ["stature", 97], ["weigh", 168], ["created_at", "2016-02-25 05:18:55.211803"], ["updated_at", "2016-02-25 05:18:55.211803"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 79], ["pay", 115432], ["stature", 198], ["weigh", 133], ["created_at", "2016-02-25 05:18:55.213302"], ["updated_at", "2016-02-25 05:18:55.213302"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 19], ["pay", 900069], ["stature", 126], ["weigh", 164], ["created_at", "2016-02-25 05:18:55.214749"], ["updated_at", "2016-02-25 05:18:55.214749"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 90], ["pay", 137567], ["stature", 12], ["weigh", 186], ["created_at", "2016-02-25 05:18:55.216096"], ["updated_at", "2016-02-25 05:18:55.216096"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 40], ["pay", 253984], ["stature", 153], ["weigh", 156], ["created_at", "2016-02-25 05:18:55.217453"], ["updated_at", "2016-02-25 05:18:55.217453"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 68], ["pay", 282196], ["stature", 188], ["weigh", 183], ["created_at", "2016-02-25 05:18:55.218723"], ["updated_at", "2016-02-25 05:18:55.218723"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 66], ["pay", 288224], ["stature", 115], ["weigh", 64], ["created_at", "2016-02-25 05:18:55.219963"], ["updated_at", "2016-02-25 05:18:55.219963"]]
+  [1m[35m (0.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 100], ["pay", 38089], ["stature", 16], ["weigh", 12], ["created_at", "2016-02-25 05:18:55.221195"], ["updated_at", "2016-02-25 05:18:55.221195"]]
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 66], ["pay", 155004], ["stature", 26], ["weigh", 144], ["created_at", "2016-02-25 05:18:55.222425"], ["updated_at", "2016-02-25 05:18:55.222425"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 23], ["pay", 397360], ["stature", 103], ["weigh", 63], ["created_at", "2016-02-25 05:18:55.223710"], ["updated_at", "2016-02-25 05:18:55.223710"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 64], ["pay", 935453], ["stature", 76], ["weigh", 146], ["created_at", "2016-02-25 05:18:55.224923"], ["updated_at", "2016-02-25 05:18:55.224923"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 68], ["pay", 761710], ["stature", 121], ["weigh", 131], ["created_at", "2016-02-25 05:18:55.226278"], ["updated_at", "2016-02-25 05:18:55.226278"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 52], ["pay", 705315], ["stature", 120], ["weigh", 44], ["created_at", "2016-02-25 05:18:55.227587"], ["updated_at", "2016-02-25 05:18:55.227587"]]
+  [1m[35m (0.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 41], ["pay", 961666], ["stature", 59], ["weigh", 138], ["created_at", "2016-02-25 05:18:55.228807"], ["updated_at", "2016-02-25 05:18:55.228807"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 36], ["pay", 845218], ["stature", 189], ["weigh", 7], ["created_at", "2016-02-25 05:18:55.230080"], ["updated_at", "2016-02-25 05:18:55.230080"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 75], ["pay", 297206], ["stature", 122], ["weigh", 142], ["created_at", "2016-02-25 05:18:55.231344"], ["updated_at", "2016-02-25 05:18:55.231344"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 84], ["pay", 384843], ["stature", 159], ["weigh", 65], ["created_at", "2016-02-25 05:18:55.232664"], ["updated_at", "2016-02-25 05:18:55.232664"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 75], ["pay", 824623], ["stature", 168], ["weigh", 165], ["created_at", "2016-02-25 05:18:55.234081"], ["updated_at", "2016-02-25 05:18:55.234081"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 92], ["pay", 296790], ["stature", 41], ["weigh", 170], ["created_at", "2016-02-25 05:18:55.235341"], ["updated_at", "2016-02-25 05:18:55.235341"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 50], ["pay", 963309], ["stature", 53], ["weigh", 130], ["created_at", "2016-02-25 05:18:55.236659"], ["updated_at", "2016-02-25 05:18:55.236659"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 49], ["pay", 253824], ["stature", 94], ["weigh", 136], ["created_at", "2016-02-25 05:18:55.238057"], ["updated_at", "2016-02-25 05:18:55.238057"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 48], ["pay", 652362], ["stature", 55], ["weigh", 117], ["created_at", "2016-02-25 05:18:55.239437"], ["updated_at", "2016-02-25 05:18:55.239437"]]
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 13], ["pay", 297919], ["stature", 161], ["weigh", 136], ["created_at", "2016-02-25 05:18:55.240635"], ["updated_at", "2016-02-25 05:18:55.240635"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 81], ["pay", 144763], ["stature", 132], ["weigh", 161], ["created_at", "2016-02-25 05:18:55.241912"], ["updated_at", "2016-02-25 05:18:55.241912"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 85], ["pay", 524299], ["stature", 46], ["weigh", 167], ["created_at", "2016-02-25 05:18:55.243259"], ["updated_at", "2016-02-25 05:18:55.243259"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 94], ["pay", 570500], ["stature", 191], ["weigh", 180], ["created_at", "2016-02-25 05:18:55.244505"], ["updated_at", "2016-02-25 05:18:55.244505"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 60], ["pay", 774922], ["stature", 65], ["weigh", 83], ["created_at", "2016-02-25 05:18:55.245724"], ["updated_at", "2016-02-25 05:18:55.245724"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 19], ["pay", 15587], ["stature", 8], ["weigh", 33], ["created_at", "2016-02-25 05:18:55.246964"], ["updated_at", "2016-02-25 05:18:55.246964"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 91], ["pay", 424609], ["stature", 54], ["weigh", 119], ["created_at", "2016-02-25 05:18:55.248466"], ["updated_at", "2016-02-25 05:18:55.248466"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 89], ["pay", 466829], ["stature", 9], ["weigh", 50], ["created_at", "2016-02-25 05:18:55.249799"], ["updated_at", "2016-02-25 05:18:55.249799"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 11], ["pay", 842420], ["stature", 169], ["weigh", 136], ["created_at", "2016-02-25 05:18:55.251087"], ["updated_at", "2016-02-25 05:18:55.251087"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 39], ["pay", 161242], ["stature", 57], ["weigh", 144], ["created_at", "2016-02-25 05:18:55.252338"], ["updated_at", "2016-02-25 05:18:55.252338"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 89], ["pay", 809035], ["stature", 125], ["weigh", 183], ["created_at", "2016-02-25 05:18:55.253562"], ["updated_at", "2016-02-25 05:18:55.253562"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 16], ["pay", 934433], ["stature", 169], ["weigh", 116], ["created_at", "2016-02-25 05:18:55.254950"], ["updated_at", "2016-02-25 05:18:55.254950"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 58], ["pay", 969887], ["stature", 16], ["weigh", 63], ["created_at", "2016-02-25 05:18:55.256175"], ["updated_at", "2016-02-25 05:18:55.256175"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 84], ["pay", 673492], ["stature", 31], ["weigh", 96], ["created_at", "2016-02-25 05:18:55.257424"], ["updated_at", "2016-02-25 05:18:55.257424"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 6], ["pay", 890912], ["stature", 91], ["weigh", 63], ["created_at", "2016-02-25 05:18:55.258734"], ["updated_at", "2016-02-25 05:18:55.258734"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 92], ["pay", 542659], ["stature", 1], ["weigh", 142], ["created_at", "2016-02-25 05:18:55.260029"], ["updated_at", "2016-02-25 05:18:55.260029"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 87], ["pay", 7887], ["stature", 18], ["weigh", 74], ["created_at", "2016-02-25 05:18:55.261261"], ["updated_at", "2016-02-25 05:18:55.261261"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 23], ["pay", 917185], ["stature", 140], ["weigh", 132], ["created_at", "2016-02-25 05:18:55.262484"], ["updated_at", "2016-02-25 05:18:55.262484"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 90], ["pay", 621606], ["stature", 139], ["weigh", 17], ["created_at", "2016-02-25 05:18:55.263747"], ["updated_at", "2016-02-25 05:18:55.263747"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 5], ["pay", 262081], ["stature", 194], ["weigh", 40], ["created_at", "2016-02-25 05:18:55.265129"], ["updated_at", "2016-02-25 05:18:55.265129"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 65], ["pay", 642887], ["stature", 150], ["weigh", 146], ["created_at", "2016-02-25 05:18:55.266383"], ["updated_at", "2016-02-25 05:18:55.266383"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 38], ["pay", 445122], ["stature", 195], ["weigh", 96], ["created_at", "2016-02-25 05:18:55.267631"], ["updated_at", "2016-02-25 05:18:55.267631"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 65], ["pay", 606960], ["stature", 183], ["weigh", 137], ["created_at", "2016-02-25 05:18:55.268880"], ["updated_at", "2016-02-25 05:18:55.268880"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 82], ["pay", 384433], ["stature", 183], ["weigh", 27], ["created_at", "2016-02-25 05:18:55.270152"], ["updated_at", "2016-02-25 05:18:55.270152"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 12], ["pay", 449628], ["stature", 133], ["weigh", 111], ["created_at", "2016-02-25 05:18:55.271439"], ["updated_at", "2016-02-25 05:18:55.271439"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 36], ["pay", 873124], ["stature", 65], ["weigh", 175], ["created_at", "2016-02-25 05:18:55.272664"], ["updated_at", "2016-02-25 05:18:55.272664"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 71], ["pay", 781158], ["stature", 182], ["weigh", 37], ["created_at", "2016-02-25 05:18:55.273905"], ["updated_at", "2016-02-25 05:18:55.273905"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 53], ["pay", 601638], ["stature", 35], ["weigh", 70], ["created_at", "2016-02-25 05:18:55.275269"], ["updated_at", "2016-02-25 05:18:55.275269"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 89], ["pay", 269735], ["stature", 169], ["weigh", 153], ["created_at", "2016-02-25 05:18:55.276629"], ["updated_at", "2016-02-25 05:18:55.276629"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 92], ["pay", 223838], ["stature", 7], ["weigh", 199], ["created_at", "2016-02-25 05:18:55.277871"], ["updated_at", "2016-02-25 05:18:55.277871"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 6], ["pay", 563201], ["stature", 70], ["weigh", 39], ["created_at", "2016-02-25 05:18:55.279167"], ["updated_at", "2016-02-25 05:18:55.279167"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 76], ["pay", 764500], ["stature", 73], ["weigh", 73], ["created_at", "2016-02-25 05:18:55.280461"], ["updated_at", "2016-02-25 05:18:55.280461"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 58], ["pay", 84493], ["stature", 98], ["weigh", 51], ["created_at", "2016-02-25 05:18:55.281703"], ["updated_at", "2016-02-25 05:18:55.281703"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 16], ["pay", 582076], ["stature", 121], ["weigh", 115], ["created_at", "2016-02-25 05:18:55.283147"], ["updated_at", "2016-02-25 05:18:55.283147"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 5], ["pay", 346932], ["stature", 52], ["weigh", 87], ["created_at", "2016-02-25 05:18:55.284694"], ["updated_at", "2016-02-25 05:18:55.284694"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 43], ["pay", 290991], ["stature", 114], ["weigh", 34], ["created_at", "2016-02-25 05:18:55.286062"], ["updated_at", "2016-02-25 05:18:55.286062"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 25], ["pay", 642028], ["stature", 93], ["weigh", 129], ["created_at", "2016-02-25 05:18:55.287452"], ["updated_at", "2016-02-25 05:18:55.287452"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 9], ["pay", 183975], ["stature", 20], ["weigh", 99], ["created_at", "2016-02-25 05:18:55.288701"], ["updated_at", "2016-02-25 05:18:55.288701"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 45], ["pay", 773928], ["stature", 53], ["weigh", 152], ["created_at", "2016-02-25 05:18:55.290048"], ["updated_at", "2016-02-25 05:18:55.290048"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 47], ["pay", 840341], ["stature", 72], ["weigh", 34], ["created_at", "2016-02-25 05:18:55.291432"], ["updated_at", "2016-02-25 05:18:55.291432"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 44], ["pay", 200602], ["stature", 124], ["weigh", 152], ["created_at", "2016-02-25 05:18:55.292827"], ["updated_at", "2016-02-25 05:18:55.292827"]]
+  [1m[35m (0.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 79], ["pay", 972603], ["stature", 70], ["weigh", 6], ["created_at", "2016-02-25 05:18:55.294121"], ["updated_at", "2016-02-25 05:18:55.294121"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 77], ["pay", 274270], ["stature", 40], ["weigh", 92], ["created_at", "2016-02-25 05:18:55.295422"], ["updated_at", "2016-02-25 05:18:55.295422"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 0], ["pay", 720629], ["stature", 62], ["weigh", 193], ["created_at", "2016-02-25 05:18:55.296784"], ["updated_at", "2016-02-25 05:18:55.296784"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 45], ["pay", 214518], ["stature", 23], ["weigh", 178], ["created_at", "2016-02-25 05:18:55.298139"], ["updated_at", "2016-02-25 05:18:55.298139"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 66], ["pay", 661880], ["stature", 119], ["weigh", 170], ["created_at", "2016-02-25 05:18:55.299375"], ["updated_at", "2016-02-25 05:18:55.299375"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["age", 60], ["pay", 300988], ["stature", 11], ["weigh", 9], ["created_at", "2016-02-25 05:18:55.300643"], ["updated_at", "2016-02-25 05:18:55.300643"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("age", "pay", "stature", "weigh", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["age", 97], ["pay", 945305], ["stature", 47], ["weigh", 96], ["created_at", "2016-02-25 05:18:55.302044"], ["updated_at", "2016-02-25 05:18:55.302044"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/users" for 127.0.0.1 at 2016-02-25 10:18:59 +0500
+Processing by UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 25 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/find" for 127.0.0.1 at 2016-02-25 10:19:02 +0500
+Processing by UsersController#find as HTML
+  Rendered users/find.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 52ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&users%5Bfrom%5D%5Bage%5D=10&users%5Bfrom%5D%5Bpay%5D=&users%5Bfrom%5D%5Bstature%5D=&users%5Bfrom%5D%5Bweigh%5D=&users%5Bto%5D%5Bage%5D=20&users%5Bto%5D%5Bpay%5D=&users%5Bto%5D%5Bstature%5D=&users%5Bto%5D%5Bweigh%5D=&commit=find" for 127.0.0.1 at 2016-02-25 10:19:08 +0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "users"=>{"from"=>{"age"=>"10", "pay"=>"", "stature"=>"", "weigh"=>""}, "to"=>{"age"=>"20", "pay"=>"", "stature"=>"", "weigh"=>""}}, "commit"=>"find"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" WHERE (age BETWEEN 10 and 20 AND age BETWEEN 10 and 20)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (age BETWEEN 10 and 20 AND age BETWEEN 10 and 20)  ORDER BY age desc LIMIT 25 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users" WHERE (age BETWEEN 10 and 20 AND age BETWEEN 10 and 20)
+  Rendered users/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 52ms (Views: 51.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/find" for 127.0.0.1 at 2016-02-25 10:19:18 +0500
+Processing by UsersController#find as HTML
+  Rendered users/find.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 37ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&users%5Bfrom%5D%5Bage%5D=10&users%5Bfrom%5D%5Bpay%5D=&users%5Bfrom%5D%5Bstature%5D=&users%5Bfrom%5D%5Bweigh%5D=&users%5Bto%5D%5Bage%5D=10&users%5Bto%5D%5Bpay%5D=&users%5Bto%5D%5Bstature%5D=&users%5Bto%5D%5Bweigh%5D=&commit=find" for 127.0.0.1 at 2016-02-25 10:19:23 +0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "users"=>{"from"=>{"age"=>"10", "pay"=>"", "stature"=>"", "weigh"=>""}, "to"=>{"age"=>"10", "pay"=>"", "stature"=>"", "weigh"=>""}}, "commit"=>"find"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (age BETWEEN 10 and 10 AND age BETWEEN 10 and 10)[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE (age BETWEEN 10 and 10 AND age BETWEEN 10 and 10)  ORDER BY age desc LIMIT 25 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (age BETWEEN 10 and 10 AND age BETWEEN 10 and 10)[0m
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 47ms (Views: 46.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/find" for 127.0.0.1 at 2016-02-25 10:19:28 +0500
+Processing by UsersController#find as HTML
+  Rendered users/find.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 34ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&users%5Bfrom%5D%5Bage%5D=10&users%5Bfrom%5D%5Bpay%5D=&users%5Bfrom%5D%5Bstature%5D=&users%5Bfrom%5D%5Bweigh%5D=&users%5Bto%5D%5Bage%5D=20&users%5Bto%5D%5Bpay%5D=&users%5Bto%5D%5Bstature%5D=&users%5Bto%5D%5Bweigh%5D=&commit=find" for 127.0.0.1 at 2016-02-25 10:19:33 +0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "users"=>{"from"=>{"age"=>"10", "pay"=>"", "stature"=>"", "weigh"=>""}, "to"=>{"age"=>"20", "pay"=>"", "stature"=>"", "weigh"=>""}}, "commit"=>"find"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" WHERE (age BETWEEN 10 and 20 AND age BETWEEN 10 and 20)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (age BETWEEN 10 and 20 AND age BETWEEN 10 and 20)  ORDER BY age desc LIMIT 25 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users" WHERE (age BETWEEN 10 and 20 AND age BETWEEN 10 and 20)
+  Rendered users/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 52ms (Views: 50.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/find" for 127.0.0.1 at 2016-02-25 10:19:38 +0500
+Processing by UsersController#find as HTML
+  Rendered users/find.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&users%5Bfrom%5D%5Bage%5D=10&users%5Bfrom%5D%5Bpay%5D=&users%5Bfrom%5D%5Bstature%5D=&users%5Bfrom%5D%5Bweigh%5D=10&users%5Bto%5D%5Bage%5D=20&users%5Bto%5D%5Bpay%5D=&users%5Bto%5D%5Bstature%5D=&users%5Bto%5D%5Bweigh%5D=40&commit=find" for 127.0.0.1 at 2016-02-25 10:19:48 +0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "users"=>{"from"=>{"age"=>"10", "pay"=>"", "stature"=>"", "weigh"=>"10"}, "to"=>{"age"=>"20", "pay"=>"", "stature"=>"", "weigh"=>"40"}}, "commit"=>"find"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (age BETWEEN 10 and 20 AND age BETWEEN 10 and 20 AND weigh BETWEEN 10 and 40 AND weigh BETWEEN 10 and 40)[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE (age BETWEEN 10 and 20 AND age BETWEEN 10 and 20 AND weigh BETWEEN 10 and 40 AND weigh BETWEEN 10 and 40)  ORDER BY age desc LIMIT 25 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (age BETWEEN 10 and 20 AND age BETWEEN 10 and 20 AND weigh BETWEEN 10 and 40 AND weigh BETWEEN 10 and 40)[0m
+  Rendered users/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/find" for 127.0.0.1 at 2016-02-25 10:20:23 +0500
+Processing by UsersController#find as HTML
+  Rendered users/find.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&users%5Bfrom%5D%5Bage%5D=10&users%5Bfrom%5D%5Bpay%5D=&users%5Bfrom%5D%5Bstature%5D=&users%5Bfrom%5D%5Bweigh%5D=&users%5Bto%5D%5Bage%5D=20&users%5Bto%5D%5Bpay%5D=&users%5Bto%5D%5Bstature%5D=&users%5Bto%5D%5Bweigh%5D=&commit=find" for 127.0.0.1 at 2016-02-25 10:20:27 +0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "users"=>{"from"=>{"age"=>"10", "pay"=>"", "stature"=>"", "weigh"=>""}, "to"=>{"age"=>"20", "pay"=>"", "stature"=>"", "weigh"=>""}}, "commit"=>"find"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" WHERE (age BETWEEN 10 and 20)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (age BETWEEN 10 and 20)  ORDER BY age desc LIMIT 25 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users" WHERE (age BETWEEN 10 and 20)
+  Rendered users/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 54ms (Views: 44.8ms | ActiveRecord: 7.0ms)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 13:41:13 +0500
+Processing by HomePagesController#index as HTML
+  [1m[36mMainmenu Load (0.4ms)[0m  [1mSELECT "mainmenus".* FROM "mainmenus"  ORDER BY (case when mainmenus.ancestry is null then 0 else 1 end), mainmenus.ancestry, created_at[0m
+  Rendered mainmenus/_main_menu_tools.html.erb (1.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 36]]
+  Rendered mainmenus/_childmenus.html.erb (4.5ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.5ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 53]]
+  Rendered mainmenus/_childmenus.html.erb (0.6ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.4ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 55]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (4.0ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.3ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 54]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (12.6ms)
+  Rendered mainmenus/_mainmenu.html.erb (23.2ms)
+  Rendered home_pages/index.html.slim within layouts/application (34.3ms)
+Completed 200 OK in 86ms (Views: 81.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 08:39:23 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#index as HTML
+  [1m[35mMainmenu Load (0.2ms)[0m  SELECT "mainmenus".* FROM "mainmenus"  ORDER BY (case when mainmenus.ancestry is null then 0 else 1 end), mainmenus.ancestry, created_at
+  Rendered mainmenus/_main_menu_tools.html.erb (1.8ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 36]]
+  Rendered mainmenus/_childmenus.html.erb (18.4ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 53]]
+  Rendered mainmenus/_childmenus.html.erb (0.7ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.4ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 55]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (3.3ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 54]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (10.6ms)
+  Rendered mainmenus/_mainmenu.html.erb (36.4ms)
+  Rendered home_pages/index.html.slim within layouts/application (63.7ms)
+Completed 200 OK in 842ms (Views: 829.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-f9e7c1541e1b8783561468c59162bd896007380f5a3799ef2169d3a3fdf40bed.css?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/childmenus.self-3d84403c4540733696062649f2e53a168152e5619aba0248f2b799529709b704.css?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/relationships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/contents.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/mainmenus.self-3148aa31b52ad018cfffcc69063dd7201c3c751fdea65a9e2948ebc1de621039.css?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/gen.self-28233e37ce6b0c3653003fd2c6fc3424c2a17188e6d58aa2fa0e6e24e1c03471.css?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/home_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/scaffolds.self-6f6cbc9946df589e147e81356d534b0b87a23725cb1a85aebe80857aede8984a.css?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/ckeditor/init.self-2f3e80b764bc18c9362e6f3326e1f32d4a8bdceff67345a3453a93b111626ff3.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/ckeditor/ckeditor.self-d44511d44b2c01b6466fda92764336001e42a860f53ed63541c0f871afed5d7a.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/childmenus.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/contents.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/home_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/mainmenus.self-c402879054b8a4eed8c5b0f9a3f69130b6345eb5e01a80c939368a72d4c4d8d9.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/relationships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/textarea.self-6b0c77e4800f51b09bad2993f431c3bd600c60529366c60f18225210e6e1387a.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/assets/application.self-38fb34ce99c858f3fce6c34ef94cafb634d142e00d7081d21c47936d8f4827ca.js?body=1" for 127.0.0.1 at 2016-02-26 08:39:24 +0500
+
+
+Started GET "/users" for 127.0.0.1 at 2016-02-26 08:39:29 +0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" LIMIT 25 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered users/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 73ms (Views: 69.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 09:00:48 +0500
+Processing by HomePagesController#index as HTML
+  [1m[36mMainmenu Load (0.2ms)[0m  [1mSELECT "mainmenus".* FROM "mainmenus"  ORDER BY (case when mainmenus.ancestry is null then 0 else 1 end), mainmenus.ancestry, created_at[0m
+  Rendered mainmenus/_main_menu_tools.html.erb (1.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 36]]
+  Rendered mainmenus/_childmenus.html.erb (1.3ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.5ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 53]]
+  Rendered mainmenus/_childmenus.html.erb (0.6ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.4ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 55]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (4.2ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.3ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 54]]
+  Rendered mainmenus/_childmenus.html.erb (0.6ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (13.1ms)
+  Rendered mainmenus/_mainmenu.html.erb (20.3ms)
+  Rendered home_pages/index.html.slim within layouts/application (26.5ms)
+Completed 200 OK in 65ms (Views: 64.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-02-26 09:01:00 +0500
+Processing by UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 25 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 54ms (Views: 52.9ms | ActiveRecord: 0.2ms)

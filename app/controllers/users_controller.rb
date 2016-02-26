@@ -12,9 +12,19 @@ class UsersController < ApplicationController
 
 		  from.each do |f|
 			  if !f[1].empty?
-				  # ниже делается строка запроса для выборки по диапозону или с простым условием
-				  # вместо вложенных IF решил записать это в одну строку
-				  to[f[0]].empty? ? p.push("#{f[0]} = #{f[1]}") : to[f[0]] >= f[1] ? p.push("#{f[0]} BETWEEN #{f[1]} and #{to[f[0]]}") : "no"
+				  #ниже делается строка запроса для выборки по диапозону или с простым условием
+				  #to[f[0]].empty? ? p.push("#{f[0]} = #{f[1]}") : to[f[0]] >= f[1] ? p.push("#{f[0]} BETWEEN #{f[1]} and #{to[f[0]]}") : "no"
+
+          if to[f[0]].empty?
+	          p.push("#{f[0]} = #{f[1]}")
+          else
+						if to[f[0]] >= f[1]
+							p.push("#{f[0]} BETWEEN #{f[1]} and #{to[f[0]]}")
+						else
+							"no"
+						end
+          end
+
 			  end
 		  end
 
