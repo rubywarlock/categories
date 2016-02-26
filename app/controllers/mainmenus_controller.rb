@@ -29,7 +29,7 @@ class MainmenusController < ApplicationController
 
   def create
 		@create_mainmenu = Mainmenu.new(params.require(:mainmenu).permit(:parent_id, :title, :text))
-		if params.require(:mainmenu).permit(:parent).nil?
+		if !params.require(:mainmenu).permit(:parent_id).nil?
 			@create_mainmenu.style_class = "nested_mainmenus site-dropdown-menu"
 		else
 			@create_mainmenu.style_class = "mmain"
