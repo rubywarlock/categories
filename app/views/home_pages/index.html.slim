@@ -3,4 +3,6 @@
     | HomePages#index
     | Find me in app/views/home_pages/index.html.erb
 
+= link_to "add main menu", new_mainmenu_path
+
 = nested_mainmenus @mainmenus.arrange(:order => :created_at)
