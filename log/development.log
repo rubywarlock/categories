@@ -60003,3 +60003,125 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-38fb34ce99c858f3fce6c34ef94cafb634d142e00d7081d21c47936d8f4827ca.js?body=1" for 127.0.0.1 at 2016-02-26 10:42:17 +0500
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+Processing by HomePagesController#index as HTML
+  [1m[36mMainmenu Load (0.1ms)[0m  [1mSELECT "mainmenus".* FROM "mainmenus"  ORDER BY (case when mainmenus.ancestry is null then 0 else 1 end), mainmenus.ancestry, created_at[0m
+  Rendered mainmenus/_main_menu_tools.html.erb (0.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 36]]
+  Rendered mainmenus/_childmenus.html.erb (0.9ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 53]]
+  Rendered mainmenus/_childmenus.html.erb (0.6ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 55]]
+  Rendered mainmenus/_childmenus.html.erb (0.6ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (3.9ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 54]]
+  Rendered mainmenus/_childmenus.html.erb (0.6ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (10.8ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 56]]
+  Rendered mainmenus/_childmenus.html.erb (0.7ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (19.3ms)
+  Rendered home_pages/index.html.slim within layouts/application (21.0ms)
+Completed 200 OK in 69ms (Views: 67.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-f9e7c1541e1b8783561468c59162bd896007380f5a3799ef2169d3a3fdf40bed.css?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/contents.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/relationships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/childmenus.self-3d84403c4540733696062649f2e53a168152e5619aba0248f2b799529709b704.css?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/gen.self-28233e37ce6b0c3653003fd2c6fc3424c2a17188e6d58aa2fa0e6e24e1c03471.css?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/home_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/scaffolds.self-6f6cbc9946df589e147e81356d534b0b87a23725cb1a85aebe80857aede8984a.css?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/mainmenus.self-3148aa31b52ad018cfffcc69063dd7201c3c751fdea65a9e2948ebc1de621039.css?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/ckeditor/init.self-2f3e80b764bc18c9362e6f3326e1f32d4a8bdceff67345a3453a93b111626ff3.js?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/ckeditor/ckeditor.self-d44511d44b2c01b6466fda92764336001e42a860f53ed63541c0f871afed5d7a.js?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/childmenus.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/contents.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/home_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/mainmenus.self-c402879054b8a4eed8c5b0f9a3f69130b6345eb5e01a80c939368a72d4c4d8d9.js?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/relationships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/textarea.self-6b0c77e4800f51b09bad2993f431c3bd600c60529366c60f18225210e6e1387a.js?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/assets/application.self-38fb34ce99c858f3fce6c34ef94cafb634d142e00d7081d21c47936d8f4827ca.js?body=1" for 127.0.0.1 at 2016-02-26 10:46:48 +0500
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 10:47:03 +0500
+Processing by HomePagesController#index as HTML
+  [1m[36mMainmenu Load (0.2ms)[0m  [1mSELECT "mainmenus".* FROM "mainmenus"  ORDER BY (case when mainmenus.ancestry is null then 0 else 1 end), mainmenus.ancestry, created_at[0m
+  Rendered mainmenus/_main_menu_tools.html.erb (0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 36]]
+  Rendered mainmenus/_childmenus.html.erb (0.7ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.4ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 53]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.3ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 55]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (4.2ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.4ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 54]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (12.5ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.4ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 56]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (21.2ms)
+  Rendered home_pages/index.html.slim within layouts/application (26.6ms)
+Completed 200 OK in 68ms (Views: 66.7ms | ActiveRecord: 0.5ms)
