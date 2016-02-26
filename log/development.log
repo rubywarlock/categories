@@ -59808,3 +59808,104 @@ Processing by UsersController#index as HTML
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
   Rendered users/index.html.erb within layouts/application (9.8ms)
 Completed 200 OK in 54ms (Views: 52.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 10:31:32 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomePagesController#index as HTML
+  [1m[35mMainmenu Load (0.2ms)[0m  SELECT "mainmenus".* FROM "mainmenus"  ORDER BY (case when mainmenus.ancestry is null then 0 else 1 end), mainmenus.ancestry, created_at
+  Rendered mainmenus/_main_menu_tools.html.erb (1.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 36]]
+  Rendered mainmenus/_childmenus.html.erb (17.1ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 53]]
+  Rendered mainmenus/_childmenus.html.erb (0.6ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.4ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 55]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (4.1ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.3ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 54]]
+  Rendered mainmenus/_childmenus.html.erb (0.5ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (12.8ms)
+  Rendered mainmenus/_mainmenu.html.erb (35.9ms)
+  Rendered home_pages/index.html.slim within layouts/application (60.6ms)
+Completed 200 OK in 4412ms (Views: 4399.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/mainmenus/new" for 127.0.0.1 at 2016-02-26 10:34:37 +0500
+Processing by MainmenusController#new as HTML
+  Rendered mainmenus/_form.html.slim (12.4ms)
+  Rendered mainmenus/new.html.slim within layouts/application (16.0ms)
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/mainmenus" for 127.0.0.1 at 2016-02-26 10:34:41 +0500
+Processing by MainmenusController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p2re6z9x5B0IyqUQHTfZg7P8ItLqCgLt5WI2znu5XsERA5rCxEwb1NOZbff+UJ3ufc7TRb0nD8vhktOxAZM5cg==", "mainmenu"=>{"parent"=>"false", "title"=>"sdf", "text"=>"sdf"}, "commit"=>"Create"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `child_ancestry' for "false":String):
+  app/controllers/mainmenus_controller.rb:36:in `create'
+
+
+  Rendered /Users/phoenix/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /Users/phoenix/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/phoenix/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/phoenix/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.7ms)
+
+
+Started GET "/mainmenus/new" for 127.0.0.1 at 2016-02-26 10:40:29 +0500
+Processing by MainmenusController#new as HTML
+  Rendered mainmenus/_form.html.slim (7.5ms)
+  Rendered mainmenus/new.html.slim within layouts/application (8.5ms)
+Completed 200 OK in 52ms (Views: 44.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/mainmenus" for 127.0.0.1 at 2016-02-26 10:40:33 +0500
+Processing by MainmenusController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BN7BVxwtMnwT6GEaQ/W8Gkb8DYX6BT0YzgxUfUQMDH2yt4V+5xDNtci7qf2gkvh3iM78Eq0oMD7K/LECPiZrzg==", "mainmenu"=>{"parent_id"=>"", "title"=>"sd", "text"=>"sdf"}, "commit"=>"Create"}
+Unpermitted parameters: parent_id, title, text
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "mainmenus" ("title", "text", "style_class", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "sd"], ["text", "sdf"], ["style_class", "mmain"], ["created_at", "2016-02-26 05:40:33.556565"], ["updated_at", "2016-02-26 05:40:33.556565"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/mainmenus/56
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/mainmenus/56" for 127.0.0.1 at 2016-02-26 10:40:33 +0500
+Processing by MainmenusController#show as HTML
+  Parameters: {"id"=>"56"}
+  [1m[35mMainmenu Load (0.2ms)[0m  SELECT  "mainmenus".* FROM "mainmenus" WHERE "mainmenus"."id" = ? LIMIT 1  [["id", 56]]
+  Rendered mainmenus/show.html.slim within layouts/application (3.4ms)
+Completed 200 OK in 48ms (Views: 39.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 10:40:35 +0500
+Processing by HomePagesController#index as HTML
+  [1m[36mMainmenu Load (0.2ms)[0m  [1mSELECT "mainmenus".* FROM "mainmenus"  ORDER BY (case when mainmenus.ancestry is null then 0 else 1 end), mainmenus.ancestry, created_at[0m
+  Rendered mainmenus/_main_menu_tools.html.erb (1.5ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 36]]
+  Rendered mainmenus/_childmenus.html.erb (5.6ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 53]]
+  Rendered mainmenus/_childmenus.html.erb (1.1ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 55]]
+  Rendered mainmenus/_childmenus.html.erb (0.7ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (5.6ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.8ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?[0m  [["mainmenu_id", 54]]
+  Rendered mainmenus/_childmenus.html.erb (0.9ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (17.2ms)
+  Rendered mainmenus/_main_menu_tools.html.erb (0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "childmenus" WHERE "childmenus"."mainmenu_id" = ?  [["mainmenu_id", 56]]
+  Rendered mainmenus/_childmenus.html.erb (1.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (0.0ms)
+  Rendered mainmenus/_mainmenu.html.erb (34.1ms)
+  Rendered home_pages/index.html.slim within layouts/application (37.2ms)
+Completed 200 OK in 92ms (Views: 90.8ms | ActiveRecord: 0.9ms)
