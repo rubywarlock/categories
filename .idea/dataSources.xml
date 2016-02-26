@@ -17,7 +17,7 @@
     <data-source source="LOCAL" name="Rails jobtest: production" uuid="76e745bb-7cb7-4441-ab31-d53b6d19cc9d">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:d5585ud2hnj0m9</jdbc-url>
+      <jdbc-url>jdbc:postgresql:d329jtahgq26ma</jdbc-url>
       <libraries />
     </data-source>
   </component>
