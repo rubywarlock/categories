@@ -4,7 +4,7 @@
     <ul>
       <% mainmenu.childmenus.each do |cm| %>
         <li>
-          <%= link_to cm.title, cm %>
+          <%= link_to cm.title, cm, class: "child-menu-title" %>
           <span class="links_separator"> | </span>
           <%= link_to "delete", cm, :method => :delete, class: "link-to-new-mainmenu" %>
         </li>

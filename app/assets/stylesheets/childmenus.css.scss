@@ -10,3 +10,17 @@
 		margin-left: 0px;
 	}
 }
+
+.child-menu-title{
+	color: #772929 !important;
+	font-weight: normal;
+	&:hover{
+		background: none;
+		text-decoration: none;
+		color: #009bff !important;
+	}
+}
+
+.child-menu-title:visited{
+	color: #006cdd;
+}
