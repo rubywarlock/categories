@@ -7,12 +7,13 @@
 		list-style: none;
 	}
 	ul{
-		margin-left: 0px;
+		//margin-left: 0px;
+		padding-left: 0px;
 	}
 }
 
 .child-menu-title{
-	color: #772929 !important;
+	color: #ab0001 !important;
 	font-weight: normal;
 	&:hover{
 		background: none;

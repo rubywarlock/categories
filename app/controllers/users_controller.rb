@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    per_page = 15
 	  if !params[:users].nil?
 		  from = params[:users][:from]
 		  to   = params[:users][:to]
@@ -30,9 +31,9 @@ class UsersController < ApplicationController
 
 		  p = p.join(" AND ")
 
-      @users = User.where(p).order("age desc")
+      @users = User.where(p).order("age desc").paginate(page: params[:page], :per_page => per_page)
 	  else
-		  @users = User.all
+		  @users = User.paginate(page: params[:page], :per_page => per_page)
 	  end
   end
 

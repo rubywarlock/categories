@@ -6,19 +6,17 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 
-
-  <script>
-    /*$(document).ready(function(){
-      $("#jquery-tree").treeview();
-    });*/
-  </script>
 </head>
 <body>
 
-<%= link_to "home", root_path %> |
-<%= link_to "users", users_path %>
+	<%= render "layouts/header" %>
 
-<%= yield %>
+	<div class="container container-add-style">
+		<div class="center-content">
+		  <%= yield %>
+		</div>
+	</div>
+
 
 <div class="footer">
 	<div class="footer-box">

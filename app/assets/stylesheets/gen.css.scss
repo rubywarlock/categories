@@ -1,9 +1,10 @@
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 body{
-	width: 500px;
-	margin-left: auto;
-	margin-right: auto;
+	//width: 500px;
+	//margin-left: auto;
+	//margin-right: auto;
 }
 
 .info{
@@ -35,20 +36,22 @@ ul{
 }
 
 .find-field{
-	display:block;
+	//display:block;
 }
 
 .footer{
 	display: block;
-	//position: fixed;
+	position: fixed;
 	bottom: 0px;
 	height: 100px;
-	width: 500px;
+	width: 100%;
 	background: #8ed2ff;
 	border-top: 1px solid #cccccc;
 	.footer-box{
 		padding: 20px;
 		width: 460px;
 		background: #e6e6e6;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
