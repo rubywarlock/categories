@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="container">
-  <%= will_paginate @users, :previous_label => " « ", :next_label => " » ", inner_window: 1, outer_window: 1 %>
+  <%= will_paginate @users, :previous_label => " « ", :next_label => " » ", inner_window: 5 %>
 </div>
 
 <div class="container">
@@ -46,5 +46,5 @@
 
 
 <div class="container">
-	<%= will_paginate @users, :previous_label => " « ", :next_label => " » ", inner_window: 1, outer_window: 1  %>
+	<%= will_paginate @users, :previous_label => " « ", :next_label => " » ", inner_window: 5  %>
 </div>
