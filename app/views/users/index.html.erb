@@ -8,10 +8,13 @@
   <%= msg %><br/>
 <% end %>
 
-<%= will_paginate @users, :previous_label => " « ", :next_label => " » " %>
+<div class="container">
+  <%= will_paginate @users, :previous_label => " « ", :next_label => " » ", inner_window: 1, outer_window: 1 %>
+</div>
 
-<table style="border-left: 1px solid #b2b2b2; border-top: 1px solid #b2b2b2;" class="users-table">
-  <thead>
+<div class="container">
+  <table style="border-left: 1px solid #b2b2b2; border-top: 1px solid #b2b2b2;" class="users-table">
+    <thead>
     <tr>
       <th>Age</th>
       <th>Pay</th>
@@ -20,11 +23,11 @@
       <th>Email</th>
       <th colspan="3">actions</th>
     </tr>
-  </thead>
+    </thead>
 
 
 
-  <tbody>
+    <tbody>
     <% @users.each do |user| %>
       <tr>
         <td><%= user.age %></td>
@@ -37,11 +40,11 @@
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
 
-<%= will_paginate @users, :previous_label => " « ", :next_label => " » " %>
 
-<br/>
-
-<%= link_to 'New User', new_user_registration_path %>
+<div class="container">
+	<%= will_paginate @users, :previous_label => " « ", :next_label => " » ", inner_window: 1, outer_window: 1  %>
+</div>
