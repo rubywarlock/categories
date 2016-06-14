@@ -1,0 +1,41 @@
+= form_for("users", url: users_path, method: :get, :html => {style:"width:490px"}) do |f|
+	= f.fields_for "from" do |from|
+		div style="width:245px; float:left;"
+
+			div class="find-field"
+				div class="find-cell"age
+				div class="find-cell"= from.text_field :age
+
+			div class="find-field"
+				div class="find-cell"pay
+				div class="find-cell"= from.text_field :pay
+
+			div class="find-field"
+				div class="find-cell"stature
+				div class="find-cell"= from.text_field :stature
+
+			div class="find-field"
+				div class="find-cell"weigh
+				div class="find-cell"= from.text_field :weigh
+
+	= f.fields_for "to" do |to|
+		div style="width:245px; float:left;"
+
+			div class="find-field"
+				div class="find-cell"to age
+				div class="find-cell" = to.text_field :age
+
+			div class="find-field"
+				div class="find-cell"to pay
+				div class="find-cell" = to.text_field :pay
+
+			div class="find-field"
+				div class="find-cell"to stature
+				div class="find-cell" = to.text_field :stature
+
+			div class="find-field"
+				div class="find-cell"to weigh
+				div class="find-cell" = to.text_field :weigh
+
+	div
+		= f.submit "find"
