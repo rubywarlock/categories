@@ -8,7 +8,8 @@ class SearchesController < ApplicationController
   def find
 	  search = params[:p]
 	  #search.gsub!(/[\\]+|[\/]+|LIKE|\*|SELECT|WHERE|ALERT|DROP|TABLE/i,"")
-	  @users = User.where("age LIKE \"%#{search}%\" OR pay LIKE \"%#{search}%\" OR stature LIKE \"%#{search}%\" OR weigh LIKE \"%#{search}%\" OR email LIKE \"%#{search}%\"").limit(10)
+	  @users = User.where("age LIKE ? OR pay LIKE ? OR stature LIKE ? OR weigh LIKE ? OR email LIKE ?",
+	                      "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%").limit(10)
 
     respond_to do |format|
       format.html
