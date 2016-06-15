@@ -21,3 +21,21 @@
 //= require_tree .
 
 
+/*$(function () {
+	// pagination links
+		$('#subproducts .pagination a').live('click', function () {
+	 $.getScript(this.href);
+	 return false;
+	 });
+	 // Search form
+	 $('#search').keyup(function () {
+	 $.get($('#subproducts_search').attr('action'), &crarr;
+	 $('#subproducts_search').serialize(), null, 'script');
+	 return false;
+	 });
+
+	$('#search').keyup(function () {
+		alert('keyup')
+	});
+});*/
+

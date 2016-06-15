@@ -38,7 +38,10 @@ class UsersController < ApplicationController
   end
 
   def find
-
+		respond_to do |format|
+			format.html
+			format.js
+		end
   end
 
   # GET /users/1

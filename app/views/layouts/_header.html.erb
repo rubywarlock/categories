@@ -22,12 +22,17 @@
 	      </li>
 	    </ul>
 	    <div class="nav navbar-nav navbar-right">
-	      <form class="navbar-form navbar-left" role="search">
+	      <form class="navbar-form navbar-left" role="search" style="position: relative; display: inline-block;">
 	        <div class="input-group">
-	          <input class="form-control" placeholder="Search for..." type="text">
+	          <input id="search" class="form-control" placeholder="Search for..." type="text">
 	          <span class="input-group-btn">
 	            <button class="btn btn-default" type="button">Go!</button>
 	          </span>
+	        </div>
+	        <div class="search-modal" id="search-modal">
+	          <div id="find-result">
+
+	          </div>
 	        </div>
 	      </form>
 	    </div>

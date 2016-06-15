@@ -1,9 +1,13 @@
 Jobtest::Application.routes.draw do
+  get 'searches/index'
+  get 'searches/show'
+  get 'searches/find'
+
   devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
   resources :childmenus
   resources :users, only: [:index, :show, :edit, :update, :destroy]
-  match "find", :to => "users#find", via: :get
+  #match "find", :to => "users#find", via: :get
 
   #get "home_pages/admin"
 	#root "home_pages#index"
