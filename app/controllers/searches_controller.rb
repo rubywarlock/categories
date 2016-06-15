@@ -14,6 +14,7 @@ class SearchesController < ApplicationController
     respond_to do |format|
       format.html
       format.js
+      format.json { render action: 'find', status: :created, location: @user }
     end
   end
 end

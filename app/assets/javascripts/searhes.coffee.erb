@@ -20,15 +20,21 @@ $(document).on 'ready page:load', ->
 		#	dataType: "script"
 			#success: success
 
-		$.getScript
-			url: "/searches/find"
-			data: { p: content }
-			success: (data) ->
-				#$("#find-result").html(data)
 		$inputSearch = $('#search')
 		$searchModal = $('#search-modal')
 
 		if $inputSearch.val().length > 0
+			$.get
+				url: "/searches/find"
+				dataType: "json"
+				data: { p: content }
+				success: (data) ->
+					li = ""
+					ul = ""
+					for k of data
+						li = li + "<li>" + data[k].email + "</li>"
+					ul = "<ul>" + li + "</ul>"
+					$("#find-result").html(ul)
 			$searchModal.css "display","block"
 		else
 			$searchModal.css "display","none"
