@@ -1,0 +1,38 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://coffeescript.org/
+
+$(document).on 'ready page:load', ->
+	$input = $('#search')
+	$input.keyup(->
+		searchCallback('',$input.val())
+		return
+	).focus()
+
+	searchCallback = (err, content) ->
+		if err
+			console.error err
+			return
+
+		#$.ajax
+		#	method: "GET"
+		#	url: "/searhes/find"
+		#	dataType: "script"
+			#success: success
+
+		$.getScript
+			url: "/searches/find"
+			data: { p: content }
+			success: (data) ->
+				#$("#find-result").html(data)
+		$inputSearch = $('#search')
+		$searchModal = $('#search-modal')
+
+		if $inputSearch.val().length > 0
+			$searchModal.css "display","block"
+		else
+			$searchModal.css "display","none"
+		#console.log $modal.val().length
+		return
+
+	return

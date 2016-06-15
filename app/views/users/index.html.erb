@@ -1,6 +1,6 @@
 <h4>Listing users</h4>
 <p>
-  <%= link_to 'Selection', find_path %>
+  <%#= link_to 'Selection', searches_index_path %>
 </p>
 
 
@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="container">
-  <%= will_paginate @users, :previous_label => " « ", :next_label => " » ", inner_window: 5 %>
+  <%= will_paginate @users, :previous_label => " « ", :next_label => " » ", inner_window: 1, outer_window: 1 %>
 </div>
 
 <div class="container">
@@ -46,5 +46,5 @@
 
 
 <div class="container">
-	<%= will_paginate @users, :previous_label => " « ", :next_label => " » ", inner_window: 5  %>
+	<%= will_paginate @users, :previous_label => " « ", :next_label => " » ", inner_window: 1, outer_window: 1  %>
 </div>
