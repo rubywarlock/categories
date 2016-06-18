@@ -1,3 +1,4 @@
 == README
 
-Just simple demo applictaion
+Just simple demo applictaion.
+The app has multiple categories.
