@@ -1,4 +1,6 @@
 == README
 
 Just simple demo applictaion.
-The app has multiple categories.
+The app has multiple categories. 
+Devise authentication. 
+Ajax User Search with json results.
