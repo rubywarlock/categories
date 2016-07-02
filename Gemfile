@@ -38,8 +38,11 @@ gem 'devise'
 gem 'nifty-generators'
 gem 'ancestry'
 
-gem 'ckeditor'
+gem 'ckeditor_rails'
 gem 'paperclip'
+#gem 'redcarpet'
+#gem 'rouge-rails'
+gem 'coderay'
 
 group :production do
 	#gem 'sqlite3'
