@@ -5,7 +5,8 @@ Jobtest::Application.routes.draw do
 
   devise_for :users
   #mount Ckeditor::Engine => '/ckeditor'
-  resources :childmenus
+  resources :childmenus, except: [:new]
+  get '/childmenus/new/:id' => 'childmenus#new', as: :new_childmenu
   resources :users, only: [:index, :show, :edit, :update, :destroy]
   #match "find", :to => "users#find", via: :get
 
@@ -16,10 +17,11 @@ Jobtest::Application.routes.draw do
 
 	resources :mainmenus, only: [:create, :edit, :update, :destroy]
 
-  match 'mainmenus/new/(:id)', to: 'mainmenus#new', as: :new_mainmenu, via: :get
-  match 'mainmenus/:id', to: 'mainmenus#show', as: :show_mainmenu, via: :get
+  get 'mainmenus/new/(:id)' => 'mainmenus#new', as: :new_mainmenu
+  get 'mainmenus/:id' => 'mainmenus#show', as: :show_mainmenu
 
-  resources :contents
+  resources :contents, only: [:index, :show, :create, :edit, :update, :destroy]
+	get '/contents/new/:id' => 'contents#new', as: :new_content
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

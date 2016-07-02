@@ -24,7 +24,7 @@ class MainmenusController < ApplicationController
 	end
 
   def new
-	  @mainmenu = Mainmenu.new(:parent_id => params[:parent_id])
+	  @mainmenu = Mainmenu.new(:parent_id => params[:id])
   end
 
   def create

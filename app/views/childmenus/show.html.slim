@@ -6,7 +6,7 @@ h5
 = @childmenu.text
 
 p
-	= link_to "Add post", new_content_path(:childmenu_id => @childmenu)
+	= link_to "Add post", new_content_path(@childmenu)
 	span.links_separator= " | "
 	= link_to "Edit", edit_childmenu_path(@childmenu)
 	span.links_separator= " | "

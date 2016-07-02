@@ -4,7 +4,7 @@ class ContentsController < ApplicationController
   end
 
   def new
-	  @content = Content.new(:childmenu_id => params[:childmenu_id])
+	  @content = Content.new(:childmenu_id => params[:id])
   end
 
 	def create
@@ -33,7 +33,7 @@ class ContentsController < ApplicationController
   def destroy
 	  childmenu_id = @content.childmenu
 	  if @content.destroy
-		  redirect_to new_content_path(:childmenu_id => childmenu_id), notice: 'Content was successfully deleted.'
+		  redirect_to new_content_path(:id => childmenu_id), notice: 'Content was successfully deleted.'
 	  else
 		  flash[:success] = 'Delete Content error'
 		  render 'new'
