@@ -10,8 +10,6 @@ Jobtest::Application.routes.draw do
   resources :users, only: [:index, :show, :edit, :update, :destroy]
   #match "find", :to => "users#find", via: :get
 
-  #get "home_pages/admin"
-	#root "home_pages#index"
   root "home_pages#index"
 	match "/admin", :to => "home_pages#admin", via: :get
 
@@ -20,7 +18,7 @@ Jobtest::Application.routes.draw do
   get 'mainmenus/new/(:id)' => 'mainmenus#new', as: :new_mainmenu
   get 'mainmenus/:id' => 'mainmenus#show', as: :show_mainmenu
 
-  resources :contents, only: [:index, :show, :create, :edit, :update, :destroy]
+  resources :contents, except: [:new]
 	get '/contents/new/:id' => 'contents#new', as: :new_content
 
   # The priority is based upon order of creation: first created -> highest priority.
