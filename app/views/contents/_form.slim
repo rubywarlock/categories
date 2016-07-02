@@ -1,0 +1,24 @@
+= form_for @content do |form|
+	- if @content.errors.any?
+		div class="alert alert-danger"
+			h4
+				= pluralize(@content.errors.count, "error")
+				'
+				|Ошибка сохранения:
+
+
+			- @content.errors.full_messages.each do |msg|
+				div= msg
+
+	= form.hidden_field :childmenu_id, :value => @content.childmenu_id
+	.form-group
+		= form.text_field :title, class: "form-control"
+
+	.form-group
+		/span
+			|[code]you Ruby code[/code] for writing lighting code
+		/= form.text_area :text, class: "form-control"
+		= form.text_area :text, :class => 'form-control ckeditor'
+
+	.form-group
+		= form.submit class: "btn btn-success"

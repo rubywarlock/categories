@@ -1,9 +1,0 @@
-I"¹(function() {
-  $(document).ready(function() {
-    $('.browser .main-title').click(function() {
-      return $('.nested_mainmenus').first().slideToggle();
-    });
-  });
-
-}).call(this);
-:ET

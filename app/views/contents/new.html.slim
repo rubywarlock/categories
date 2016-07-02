@@ -1,19 +1,9 @@
 .info
-  h4
-    | Contents#new
-    br
-    | Find me in app/views/contents/new.html.erb
+	h4
+		| Contents#new
+		br
+		| Find me in app/views/contents/new.html.erb
+	br
+	= link_to "Back", _back_url
 
-= form_for @new_content do |form|
-  = form.hidden_field :childmenu_id, :value => @new_content.childmenu_id
-  = form.text_field :title
-  = form.cktext_area :text, :class => 'someclass', :ckeditor => {:language => 'ru'}
-  /
-    = form.cktext_area :text, :value => 'Default value', :id => 'sometext'
-    = form.cktext_area :title, :class => 'someclass', :ckeditor => {:language => 'ru'}
-    = cktext_area :content, :info, :cols => 40, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'}
-
-  .actions
-    p
-      br
-      = form.submit "create Content"
+= render "contents/form"

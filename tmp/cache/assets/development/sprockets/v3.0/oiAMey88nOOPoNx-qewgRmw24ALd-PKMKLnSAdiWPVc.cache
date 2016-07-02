@@ -1,9 +1,0 @@
-I"š(function() {
-  $(document).ready(function() {
-    $('.folder .main-title').click(function() {
-      return alert("click");
-    });
-  });
-
-}).call(this);
-:ET

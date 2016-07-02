@@ -1,7 +1,0 @@
-I"l(function() {
-  $(document).ready(function() {
-    $('#jquery-tree').treeview();
-  });
-
-}).call(this);
-:ET

@@ -16,7 +16,8 @@
 
 //= require bootstrap-sprockets
 
-//= require ckeditor/init
+//= require ckeditor-jquery
+
 
 //= require_tree .
 
