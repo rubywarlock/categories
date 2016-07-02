@@ -4,7 +4,7 @@ class ChildmenusController < ApplicationController
   end
 
   def new
-    @childmenu = Childmenu.new(:mainmenu_id => params[:parent_id])
+    @childmenu = Childmenu.new(:mainmenu_id => params[:id])
   end
 
   def create
