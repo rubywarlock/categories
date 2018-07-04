@@ -1,5 +1,5 @@
 # Use this hook to configure ckeditor
-Ckeditor::Rails.configure do |config|
+#Ckeditor::Rails.configure do |config|
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default), :mongo_mapper and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
@@ -36,4 +36,4 @@ Ckeditor::Rails.configure do |config|
   # By default: nil (no limit)
   # config.assets_languages = ['en', 'uk']
   # config.assets_plugins = ['image', 'smiley']
-end
+#end
