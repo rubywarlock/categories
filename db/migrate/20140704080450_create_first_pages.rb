@@ -1,4 +1,4 @@
-class CreateFirstPages < ActiveRecord::Migration
+class CreateFirstPages < ActiveRecord::Migration[4.2]
   def change
     create_table :first_pages do |t|
       t.string :title

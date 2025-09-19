@@ -1,4 +1,4 @@
-class CreateChildmenus < ActiveRecord::Migration
+class CreateChildmenus < ActiveRecord::Migration[4.2]
   def change
     create_table :childmenus do |t|
       t.integer :mainmenu_id

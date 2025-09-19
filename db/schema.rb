@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,91 +10,89 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614094737) do
+ActiveRecord::Schema.define(version: 2016_06_14_094737) do
 
   create_table "childmenus", force: :cascade do |t|
-    t.integer  "mainmenu_id"
-    t.string   "title",       limit: 255
-    t.string   "text",        limit: 255
+    t.integer "mainmenu_id"
+    t.string "title"
+    t.string "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
-    t.string   "data_file_name",    limit: 255, null: false
-    t.string   "data_content_type", limit: 255
-    t.integer  "data_file_size"
-    t.integer  "assetable_id"
-    t.string   "assetable_type",    limit: 30
-    t.string   "type",              limit: 30
-    t.integer  "width"
-    t.integer  "height"
+    t.string "data_file_name", null: false
+    t.string "data_content_type"
+    t.integer "data_file_size"
+    t.integer "assetable_id"
+    t.string "assetable_type", limit: 30
+    t.string "type", limit: 30
+    t.integer "width"
+    t.integer "height"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
+    t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
   end
 
-  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
-  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
-
   create_table "contents", force: :cascade do |t|
-    t.integer  "childmenu_id"
-    t.string   "title",        limit: 255
-    t.text     "text"
+    t.integer "childmenu_id"
+    t.string "title"
+    t.text "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "mainmenus", force: :cascade do |t|
-    t.string   "title",          limit: 255
-    t.text     "text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "parent_id"
-    t.integer  "ancestry_depth",             default: 0
-    t.string   "ancestry",       limit: 255
-    t.string   "style_class"
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "parent_id"
+    t.integer "level", default: 0
+    t.string "ancestry"
+    t.string "style_class"
+    t.index ["ancestry"], name: "index_mainmenus_on_ancestry"
   end
 
   create_table "page_hierarchies", id: false, force: :cascade do |t|
-    t.integer "ancestor_id",   null: false
+    t.integer "ancestor_id", null: false
     t.integer "descendant_id", null: false
-    t.integer "generations",   null: false
+    t.integer "generations", null: false
+    t.index ["ancestor_id", "descendant_id", "generations"], name: "page_anc_desc_udx", unique: true
+    t.index ["descendant_id"], name: "page_desc_idx"
   end
-
-  add_index "page_hierarchies", ["ancestor_id", "descendant_id", "generations"], name: "page_anc_desc_udx", unique: true
-  add_index "page_hierarchies", ["descendant_id"], name: "page_desc_idx"
 
   create_table "relationships", force: :cascade do |t|
-    t.integer  "parent_id"
-    t.integer  "derived_id"
+    t.integer "parent_id"
+    t.integer "derived_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "level"
+    t.integer "level"
+    t.index ["derived_id"], name: "index_relationships_on_derived_id"
+    t.index ["parent_id", "derived_id"], name: "index_relationships_on_parent_id_and_derived_id", unique: true
+    t.index ["parent_id"], name: "index_relationships_on_parent_id"
   end
-
-  add_index "relationships", ["derived_id"], name: "index_relationships_on_derived_id"
-  add_index "relationships", ["parent_id", "derived_id"], name: "index_relationships_on_parent_id_and_derived_id", unique: true
-  add_index "relationships", ["parent_id"], name: "index_relationships_on_parent_id"
 
   create_table "users", force: :cascade do |t|
-    t.integer  "age"
-    t.integer  "pay"
-    t.integer  "stature"
-    t.integer  "weigh"
+    t.integer "age"
+    t.integer "pay"
+    t.integer "stature"
+    t.integer "weigh"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email"
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.string "email"
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
