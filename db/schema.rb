@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2016_06_14_094737) do
+ActiveRecord::Schema.define(version: 2025_09_21_084448) do
 
   create_table "childmenus", force: :cascade do |t|
     t.integer "mainmenu_id"
-    t.string "title"
-    t.string "text"
+    t.string "title", limit: 255
+    t.string "text", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
-    t.string "data_file_name", null: false
-    t.string "data_content_type"
+    t.string "data_file_name", limit: 255, null: false
+    t.string "data_content_type", limit: 255
     t.integer "data_file_size"
     t.integer "assetable_id"
     t.string "assetable_type", limit: 30
@@ -37,22 +37,21 @@ ActiveRecord::Schema.define(version: 2016_06_14_094737) do
 
   create_table "contents", force: :cascade do |t|
     t.integer "childmenu_id"
-    t.string "title"
+    t.string "title", limit: 255
     t.text "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "mainmenus", force: :cascade do |t|
-    t.string "title"
+    t.string "title", limit: 255
     t.text "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer "parent_id"
-    t.integer "level", default: 0
-    t.string "ancestry"
+    t.integer "ancestry_depth", default: 0
+    t.string "ancestry", limit: 255
     t.string "style_class"
-    t.index ["ancestry"], name: "index_mainmenus_on_ancestry"
   end
 
   create_table "page_hierarchies", id: false, force: :cascade do |t|
@@ -91,7 +90,7 @@ ActiveRecord::Schema.define(version: 2016_06_14_094737) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.boolean "admin"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
