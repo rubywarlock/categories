@@ -20,6 +20,6 @@ Jobtest::Application.routes.draw do
   get 'mainmenus/new/(:id)' => 'mainmenus#new', as: :new_mainmenu
   get 'mainmenus/:id' => 'mainmenus#show', as: :show_mainmenu
 
-  resources :contents, except: [:new]
-  get '/contents/new/:id' => 'contents#new', as: :new_content
+  resources :posts, except: [:new]
+  get '/posts/new/:id' => 'posts#new', as: :new_post
 end

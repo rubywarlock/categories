@@ -1,0 +1,14 @@
+.info
+  h4
+    | Contents#show
+    br
+    | Find me in app/views/Posts/show.html.erb
+
+= link_to @post.childmenu.title, @post.childmenu
+
+= render "posts/post", :post => @post
+
+p
+  = link_to "Edit", edit_post_path(@post)
+  span.links_separator= " | "
+  = link_to "Destroy", post_path(@post), :confirm => "Are you sure?", method: :delete

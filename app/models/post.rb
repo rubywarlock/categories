@@ -1,4 +1,4 @@
-class Content < ActiveRecord::Base
+class Post < ActiveRecord::Base
 	#validates :title, presence: true, length: { maximum: 255 }
 	#validates :text, presence: true, length: { maximum: 1000 }
 	include ActionView::Helpers::TextHelper

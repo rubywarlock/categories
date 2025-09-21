@@ -1,18 +1,18 @@
-class ContentsController < ApplicationController
-	before_action :set_content, only: [:show, :edit, :update, :destroy]
+class PostsController < ApplicationController
+	before_action :set_post, only: [:show, :edit, :update, :destroy]
   def show
   end
 
   def new
-	  @content = Content.new(:childmenu_id => params[:id])
+	  @post = Post.new(:childmenu_id => params[:id])
   end
 
 	def create
-		@content = Content.new(params.require(:content).permit(:childmenu_id, :title, :text))
-		@content.text = @content.rubycode
-		#@create_content.text = @create_content.replacer
-		if @content.save
-			redirect_to @content, notice: 'Content was successfully created.'
+		@post = Post.new(params.require(:post).permit(:childmenu_id, :title, :text))
+		@post.text = @post.rubycode
+		#@create_post.text = @create_post.replacer
+		if @post.save
+			redirect_to @post, notice: 'Post was successfully created.'
 		else
 			flash[:error] = "Error create"
 			render "new"
@@ -23,26 +23,26 @@ class ContentsController < ApplicationController
   end
 
 	def update
-		if @content.update(params.require(:content).permit(:title, :text))
-			redirect_to @content, notice: 'Content was successfully updated.'
+		if @post.update(params.require(:post).permit(:title, :text))
+			redirect_to @post, notice: 'Post was successfully updated.'
 		else
 			render action: "edit"
 		end
 	end
 
   def destroy
-	  childmenu_id = @content.childmenu
-	  if @content.destroy
-		  redirect_to new_content_path(:id => childmenu_id), notice: 'Content was successfully deleted.'
+	  childmenu_id = @post.childmenu
+	  if @post.destroy
+		  redirect_to new_post_path(:id => childmenu_id), notice: 'Post was successfully deleted.'
 	  else
-		  flash[:success] = 'Delete Content error'
+		  flash[:success] = 'Delete Post error'
 		  render 'new'
 	  end
   end
 
 	private
-	def set_content
-		@content = Content.find(params[:id])
+	def set_post
+		@post = Post.find(params[:id])
 	end
 
 end

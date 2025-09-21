@@ -1,4 +1,4 @@
 class Childmenu < ActiveRecord::Base
-	has_many :contents, dependent: :destroy
+	has_many :posts, dependent: :destroy
 	belongs_to :mainmenu
 end

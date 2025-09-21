@@ -7,7 +7,7 @@ div class="panel panel-info"
     = @childmenu.text
 
     div
-      = link_to "Add post", new_content_path(@childmenu)
+      = link_to "Add post", new_post_path(@childmenu)
       span.links_separator= " | "
       = link_to "Edit", edit_childmenu_path(@childmenu)
       span.links_separator= " | "
@@ -16,13 +16,13 @@ div class="panel panel-info"
     h3
       | Posts
 
-    - @childmenu.contents.each do |content|
-      = render "contents/content", :content => content
+    - @childmenu.posts.each do |post|
+      = render "posts/post", :post => post
 
       div
-        = link_to "Open post", content_path(content)
+        = link_to "Open post", post_path(post)
         span.links_separator= " | "
-        = link_to "Edit post", edit_content_path(content)
+        = link_to "Edit post", edit_post_path(post)
         span.links_separator= " | "
-        = link_to "Destroy", content_path(content), confirm: "Are you sure?", method: :delete
+        = link_to "Destroy", post_path(post), confirm: "Are you sure?", method: :delete
 

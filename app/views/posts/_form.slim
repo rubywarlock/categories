@@ -1,16 +1,16 @@
-= form_for @content do |form|
-	- if @content.errors.any?
+= form_for @post do |form|
+	- if @post.errors.any?
 		div class="alert alert-danger"
 			h4
-				= pluralize(@content.errors.count, "error")
+				= pluralize(@post.errors.count, "error")
 				'
 				|Ошибка сохранения:
 
 
-			- @content.errors.full_messages.each do |msg|
+			- @post.errors.full_messages.each do |msg|
 				div= msg
 
-	= form.hidden_field :childmenu_id, :value => @content.childmenu_id
+	= form.hidden_field :childmenu_id, :value => @post.childmenu_id
 	.form-group
 		= form.text_field :title, class: "form-control"
 

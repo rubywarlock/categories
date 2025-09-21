@@ -1,4 +1,4 @@
-module ContentsHelper
+module PostsHelper
 	def rubycode(code)
 		#render html: code, language: :ruby
 		#code.render(language: :ruby)

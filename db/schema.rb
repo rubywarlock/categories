@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2025_09_21_084448) do
+ActiveRecord::Schema.define(version: 2025_09_21_101117) do
 
   create_table "childmenus", force: :cascade do |t|
     t.integer "mainmenu_id"
@@ -35,14 +35,6 @@ ActiveRecord::Schema.define(version: 2025_09_21_084448) do
     t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
   end
 
-  create_table "contents", force: :cascade do |t|
-    t.integer "childmenu_id"
-    t.string "title", limit: 255
-    t.text "text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "mainmenus", force: :cascade do |t|
     t.string "title", limit: 255
     t.text "text"
@@ -60,6 +52,14 @@ ActiveRecord::Schema.define(version: 2025_09_21_084448) do
     t.integer "generations", null: false
     t.index ["ancestor_id", "descendant_id", "generations"], name: "page_anc_desc_udx", unique: true
     t.index ["descendant_id"], name: "page_desc_idx"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer "childmenu_id"
+    t.string "title", limit: 255
+    t.text "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "relationships", force: :cascade do |t|

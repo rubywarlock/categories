@@ -12,7 +12,7 @@
 		return
 	).focus()
 
-	searchCallback = (err, content) ->
+	searchCallback = (err, post) ->
 		if err
 			console.error err
 			return
@@ -24,7 +24,7 @@
 			$.get
 				url: "/searches/find"
 				dataType: "script"
-				data: { p: content }
+				data: { p: post }
 				success: (data) ->
 					li = ""
 					ul = ""
