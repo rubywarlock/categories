@@ -10,18 +10,18 @@
       from = params[:users][:from]
       to   = params[:users][:to]
 
-      p = []
+      query_array = []
 
       from.each do |f|
         if !f[1].empty?
           # ниже делается строка запроса для выборки по диапозону или с простым условием
-          # to[f[0]].empty? ? p.push("#{f[0]} = #{f[1]}") : to[f[0]] >= f[1] ? p.push("#{f[0]} BETWEEN #{f[1]} and #{to[f[0]]}") : "no"
+          # to[f[0]].empty? ? query_array.push("#{f[0]} = #{f[1]}") : to[f[0]] >= f[1] ? query_array.push("#{f[0]} BETWEEN #{f[1]} and #{to[f[0]]}") : "no"
 
           if to[f[0]].empty?
-            p.push("#{f[0]} = #{f[1]}")
+            query_array.push("#{f[0]} = #{f[1]}")
           else
             if to[f[0]] >= f[1]
-              p.push("#{f[0]} BETWEEN #{f[1]} and #{to[f[0]]}")
+              query_array.push("#{f[0]} BETWEEN #{f[1]} and #{to[f[0]]}")
             else
               "no"
             end
@@ -30,9 +30,9 @@
         end
       end
 
-      p = p.join(" AND ")
+      sql_query = query_array.join(" AND ")
 
-      @users = User.where(p).order("age desc").paginate(page: params[:page], :per_page => per_page)
+      @users = User.where(sql_query).order("age desc").paginate(page: params[:page], :per_page => per_page)
     else
       @users = User.paginate(page: params[:page], :per_page => per_page)
     end
