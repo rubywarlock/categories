@@ -21,19 +21,22 @@ class MainmenusController < ApplicationController
   end
 
   def new
-    @mainmenu = Mainmenu.new(:parent_id => params[:id])
+    @mainmenu = Mainmenu.new(parent_id: params[:parent_id])
   end
 
   def create
-    @create_mainmenu = Mainmenu.new(params.require(:mainmenu).permit(:parent_id, :title, :text))
-    if !params.require(:mainmenu).permit(:parent_id).nil?
-      @create_mainmenu.style_class = "nested_mainmenus site-dropdown-menu"
+    @mainmenu = Mainmenu.new(mainmenu_params)
+
+    if @mainmenu.parent_id.blank?
+      @mainmenu.style_class = "nested_mainmenus site-dropdown-menu"
     else
-      @create_mainmenu.style_class = "mmain"
+      @mainmenu.style_class = "mmain"
     end
-    if @create_mainmenu.save
+
+    if @mainmenu.save
       flash[:success] = 'Your children mainmenu was successfully added!'
-      redirect_to @create_mainmenu
+
+      redirect_to @mainmenu
     else
       render 'new'
     end
@@ -56,7 +59,7 @@ class MainmenusController < ApplicationController
 private
 
   def mainmenu_params
-    params.require(:mainmenu).permit(:title, :text)
+    params.require(:mainmenu).permit(:parent_id, :title, :text)
   end
 
   def set_mainmenu

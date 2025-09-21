@@ -10,6 +10,8 @@
       div= msg
 
   = form.hidden_field :mainmenu_id, value: @mainmenu.id
+  = form.hidden_field :parent_id, value: @mainmenu.parent_id
+
   .form-group
     = form.text_field :title, class: "form-control"
 
