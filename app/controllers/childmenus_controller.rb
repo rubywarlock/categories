@@ -23,7 +23,6 @@ class ChildmenusController < ApplicationController
   end
 
   def update
-
     if @childmenu.update_attributes(childmenu_params)
       redirect_to @childmenu, notice: 'Childmenu was successfully updated.'
     else

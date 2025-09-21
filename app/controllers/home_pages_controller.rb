@@ -5,6 +5,4 @@ class HomePagesController < ApplicationController
 
   def admin
   end
-
-
 end
