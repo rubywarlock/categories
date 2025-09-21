@@ -10,6 +10,7 @@
 !/log/.keep
 /tmp
 !/Gemfile.lock
+.bundle
 
 /public/packs
 /public/packs-test
