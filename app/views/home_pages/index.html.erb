@@ -3,6 +3,7 @@
     Home
   </h4>
 </div>
-<%= link_to "add main menu", new_mainmenu_path, class: "link-to-new-mainmenu" %>
+
+<%= link_to "add main category", new_mainmenu_path, class: "link-to-new-mainmenu" %>
 
 <%= nested_mainmenus @mainmenus.arrange(:order => :created_at) %>
