@@ -2,7 +2,8 @@ div class="info"
   h4 style="text-shadow: 0 1px 0 #fff,1px 2px 2px #aaa;"
     All Categoies
 
+- if current_user&.admin?
+  = link_to "Add Main Category", new_mainmenu_path, class: "link-to-new-mainmenu"
+
 - if @mainmenus.present?
   = nested_mainmenus @mainmenus.arrange(:order => :created_at)
-- else
-  = link_to "Категории отсутсвуют, создать.", new_mainmenu_path
