@@ -2,8 +2,8 @@
 
   <div id="main-title-<%= mainmenu.id %>" class="<%= cycle("odd", "even")%> <%= mainmenu.style_class %>">
     <span class="main-title" onclick=""><%= mainmenu.title %></span>
-		<%= render "mainmenus/main_menu_tools", :mainmenu => mainmenu %>
-	  <%= render "mainmenus/childmenus", :mainmenu => mainmenu %>
+    <%= render "mainmenus/main_menu_tools", :mainmenu => mainmenu %>
+    <%= render "mainmenus/childmenus", :mainmenu => mainmenu %>
     <%= nested_mainmenus(sub_mainmenus) %>
   </div>
 
