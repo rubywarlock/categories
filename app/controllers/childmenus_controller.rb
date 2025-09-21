@@ -31,7 +31,7 @@ class ChildmenusController < ApplicationController
   end
 
   def destroy
-    if @delete.destroy
+    if @childmenu.destroy
       redirect_to root_path
     else
       flash[:success] = 'Delete Childmenu error'
