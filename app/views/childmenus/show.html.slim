@@ -4,20 +4,20 @@
 div class="panel panel-info"
   div class="panel-heading"
     h3 class="panel-title"
-      = @childmenu.title
+      = @category.title
 
   div class="panel-body"
-    = @childmenu.text
+    = @category.text
 
-    - if current_user_have_access?(current_user, @childmenu)
+    - if current_user_have_access?(current_user, @category)
       div
-        = link_to "Add post", new_post_path(@childmenu)
+        = link_to "Add post", new_post_path(@category)
         span.links_separator= " | "
-        = link_to "Edit", edit_childmenu_path(@childmenu)
+        = link_to "Edit", edit_childmenu_path(@category)
         span.links_separator= " | "
-        = link_to "Destroy", childmenu_path(@childmenu), confirm: "Are you sure?", method: :delete
+        = link_to "Destroy", childmenu_path(@category), confirm: "Are you sure?", method: :delete
 
     h3
       | Posts
 
-    = render "posts/posts", posts: @childmenu.posts
+    = render "posts/posts", posts: @category.posts
