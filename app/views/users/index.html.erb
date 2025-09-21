@@ -33,14 +33,8 @@
         <td><%= user.stature %></td>
         <td><%= user.weigh %></td>
         <td><%= link_to user.email, user %></td>
-
-        <td>
-          <%= edit_user_button(current_user) %>
-        </td>
-
-        <td>
-          <%= destroy_user_button(current_user) %>
-        </td>
+        <td><%= edit_user_button(current_user) %></td>
+        <td><%= destroy_user_button(current_user) %></td>
       </tr>
     <% end %>
     </tbody>
