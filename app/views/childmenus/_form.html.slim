@@ -1,0 +1,20 @@
+= form_for @childmenu do |form|
+  - if @childmenu.errors.any?
+    div class="alert alert-danger"
+      h4
+        = pluralize(@childmenu.errors.count, "error")
+        '
+        |Ошибка сохранения:
+
+    - @childmenu.errors.full_messages.each do |msg|
+      div= msg
+
+  = form.hidden_field :mainmenu_id, :value => @childmenu.mainmenu_id
+  .form-group
+    = form.text_field :title, class: "form-control"
+
+  .form-group
+    = form.text_area :text, :class => 'form-control ckeditor'
+
+  .form-group
+    = form.submit class: "btn btn-success"
