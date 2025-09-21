@@ -1,6 +1,6 @@
 class CreateTableContents < ActiveRecord::Migration[4.2]
   def change
-    create_table :contents do |t|
+    create_table :posts do |t|
       t.integer :childmenu_id
       t.string :title
       t.text :text
