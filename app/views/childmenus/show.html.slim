@@ -6,22 +6,23 @@ div class="panel panel-info"
   div class="panel-body"
     = @childmenu.text
 
-p
-  = link_to "Add post", new_content_path(@childmenu)
-  span.links_separator= " | "
-  = link_to "Edit", edit_childmenu_path(@childmenu)
-  span.links_separator= " | "
-  = link_to "Destroy", childmenu_path(@childmenu), confirm: "Are you sure?", method: :delete
+    p
+      = link_to "Add post", new_content_path(@childmenu)
+      span.links_separator= " | "
+      = link_to "Edit", edit_childmenu_path(@childmenu)
+      span.links_separator= " | "
+      = link_to "Destroy", childmenu_path(@childmenu), confirm: "Are you sure?", method: :delete
 
-h4
-  | Posts
+    h4
+      | Posts
 
-- @childmenu.contents.each do |content|
-  = render "contents/content", :content => content
-  p
-    = link_to "Open post", content_path(content)
-    span.links_separator= " | "
-    = link_to "Edit post", edit_content_path(content)
-    span.links_separator= " | "
-    = link_to "Destroy", content_path(content), confirm: "Are you sure?", method: :delete
+    - @childmenu.contents.each do |content|
+      = render "contents/content", :content => content
+
+      p
+        = link_to "Open post", content_path(content)
+        span.links_separator= " | "
+        = link_to "Edit post", edit_content_path(content)
+        span.links_separator= " | "
+        = link_to "Destroy", content_path(content), confirm: "Are you sure?", method: :delete
 
