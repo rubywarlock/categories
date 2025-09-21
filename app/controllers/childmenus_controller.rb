@@ -1,18 +1,19 @@
 class ChildmenusController < ApplicationController
   before_action :set_childmenu, only: [:show, :edit, :update, :destroy]
+  before_action :access, only: [:create, :update, :destroy]
 
   def show
   end
 
   def new
-    @childmenu = Childmenu.new(mainmenu_id: params[:id])
+    @category = Childmenu.new(mainmenu_id: params[:id])
   end
 
   def create
-    @childmenu = Childmenu.new(childmenu_params)
+    @category = Childmenu.new(childmenu_params)
 
-    if @childmenu.save
-      redirect_to @childmenu, notice: 'Childmenu was successfully updated.'
+    if @category.save
+      redirect_to @category, notice: 'Childmenu was successfully updated.'
     else
       flash[:error] = 'Delete Childmenu error'
       render action: "new"
@@ -23,15 +24,15 @@ class ChildmenusController < ApplicationController
   end
 
   def update
-    if @childmenu.update_attributes(childmenu_params)
-      redirect_to @childmenu, notice: 'Childmenu was successfully updated.'
+    if @category.update_attributes(childmenu_params)
+      redirect_to @category, notice: 'Childmenu was successfully updated.'
     else
       render action: "edit"
     end
   end
 
   def destroy
-    if @childmenu.destroy
+    if @category.destroy
       redirect_to root_path
     else
       flash[:success] = 'Delete Childmenu error'
@@ -46,6 +47,6 @@ class ChildmenusController < ApplicationController
   end
 
   def set_childmenu
-    @childmenu = Childmenu.find(params[:id])
+    @category = Childmenu.find(params[:id])
   end
 end

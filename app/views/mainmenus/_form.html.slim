@@ -1,16 +1,16 @@
-= form_for @mainmenu do |form|
-  - if @mainmenu.errors.any?
+= form_for @category do |form|
+  - if @category.errors.any?
     div class="alert alert-danger"
       h4
-        = pluralize(@mainmenu.errors.count, "error")
+        = pluralize(@category.errors.count, "error")
         '
         |Ошибка сохранения:
 
-    - @mainmenu.errors.full_messages.each do |msg|
+    - @category.errors.full_messages.each do |msg|
       div= msg
 
-  = form.hidden_field :mainmenu_id, value: @mainmenu.id
-  = form.hidden_field :parent_id, value: @mainmenu.parent_id
+  = form.hidden_field :mainmenu_id, value: @category.id
+  = form.hidden_field :parent_id, value: @category.parent_id
 
   .form-group
     = form.text_field :title, class: "form-control"

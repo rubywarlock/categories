@@ -1,6 +1,8 @@
 class MainmenusController < ApplicationController
   include ApplicationHelper
+
   before_action :set_mainmenu, only: [:show, :edit, :update, :destroy]
+  before_action :access, only: [:create, :update, :destroy]
 
   def index
     @mainmenus = Mainmenu.all
@@ -13,30 +15,30 @@ class MainmenusController < ApplicationController
   end
 
   def update
-    if @mainmenu.update_attributes(params.require(:mainmenu).permit(:title, :text))
-      redirect_to @mainmenu, notice: 'Mainmenu was successfully updated.'
+    if @category.update_attributes(params.require(:mainmenu).permit(:title, :text))
+      redirect_to @category, notice: 'Mainmenu was successfully updated.'
     else
       render action: "edit"
     end
   end
 
   def new
-    @mainmenu = Mainmenu.new(parent_id: params[:parent_id])
+    @category = Mainmenu.new(parent_id: params[:parent_id])
   end
 
   def create
-    @mainmenu = Mainmenu.new(mainmenu_params)
+    @category = Mainmenu.new(mainmenu_params)
 
-    if @mainmenu.parent_id.blank?
-      @mainmenu.style_class = "nested_mainmenus site-dropdown-menu"
+    if @category.parent_id.blank?
+      @category.style_class = "nested_mainmenus site-dropdown-menu"
     else
-      @mainmenu.style_class = "mmain"
+      @category.style_class = "mmain"
     end
 
-    if @mainmenu.save
+    if @category.save
       flash[:success] = 'Your children mainmenu was successfully added!'
 
-      redirect_to @mainmenu
+      redirect_to @category
     else
       render 'new'
     end
@@ -47,7 +49,7 @@ class MainmenusController < ApplicationController
   end
 
   def destroy
-    if @mainmenu.destroy
+    if @category.destroy
       flash[:success] = 'Mainmenu deleted'
       redirect_to root_path
     else
@@ -63,7 +65,7 @@ private
   end
 
   def set_mainmenu
-    @mainmenu = Mainmenu.find(params[:id])
+    @category = Mainmenu.find(params[:id])
   end
 end
 

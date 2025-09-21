@@ -4,26 +4,26 @@
 div class="panel panel-info"
   div class="panel-heading"
     h3 class="panel-title"
-      = @mainmenu.title
+      = @category.title
 
   div class="panel-body"
-    = @mainmenu.text
+    = @category.text
 
-    - if current_user_have_access?(current_user, @mainmenu)
+    - if current_user_have_access?(current_user, @category)
       div
-        = link_to "Add Main Catagory", new_mainmenu_path(parent_id: @mainmenu.id)
+        = link_to "Add Main Catagory", new_mainmenu_path(parent_id: @category.id)
         span.links_separator= " | "
-        = link_to "Edit", edit_mainmenu_path(@mainmenu)
+        = link_to "Edit", edit_mainmenu_path(@category)
         span.links_separator= " | "
-        = link_to "Destroy", mainmenu_path(@mainmenu), confirm: "Are you sure?", method: :delete
+        = link_to "Destroy", mainmenu_path(@category), confirm: "Are you sure?", method: :delete
 
     h3
       | Categories
 
-    - if @mainmenu.childmenus.present?
+    - if @category.childmenus.present?
       div class="childmenu-class"
         ul
-          - @mainmenu.childmenus.each do |childmenu|
+          - @category.childmenus.each do |childmenu|
             li
               = link_to childmenu.title, childmenu_path(childmenu), class: "child-menu-title"
               span class="links_separator"
