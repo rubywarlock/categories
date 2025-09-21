@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 2025_09_21_132054) do
 
   create_table "childmenus", force: :cascade do |t|
     t.integer "mainmenu_id"
-    t.string "title", limit: 255
-    t.string "text", limit: 255
+    t.string "title"
+    t.string "text"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "user_id"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 2025_09_21_132054) do
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
-    t.string "data_file_name", limit: 255, null: false
-    t.string "data_content_type", limit: 255
+    t.string "data_file_name", null: false
+    t.string "data_content_type"
     t.integer "data_file_size"
     t.integer "assetable_id"
     t.string "assetable_type", limit: 30
@@ -46,15 +46,16 @@ ActiveRecord::Schema.define(version: 2025_09_21_132054) do
   end
 
   create_table "mainmenus", force: :cascade do |t|
-    t.string "title", limit: 255
+    t.string "title"
     t.text "text"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "parent_id"
-    t.integer "ancestry_depth", default: 0
-    t.string "ancestry", limit: 255
+    t.integer "level", default: 0
+    t.string "ancestry"
     t.string "style_class"
     t.integer "user_id"
+    t.index ["ancestry"], name: "index_mainmenus_on_ancestry"
     t.index ["user_id"], name: "index_mainmenus_on_user_id"
   end
 
@@ -68,7 +69,7 @@ ActiveRecord::Schema.define(version: 2025_09_21_132054) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "childmenu_id"
-    t.string "title", limit: 255
+    t.string "title"
     t.text "text"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -105,6 +106,7 @@ ActiveRecord::Schema.define(version: 2025_09_21_132054) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.boolean "admin"
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
