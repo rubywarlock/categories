@@ -3,10 +3,13 @@ class Post < ActiveRecord::Base
 	#validates :text, presence: true, length: { maximum: 1000 }
 	include ActionView::Helpers::TextHelper
 
+	has_many :comments, dependent: :destroy
+
 	validates :title, length: { maximum: 255 }
 	validates :text, length: { maximum: 3000 }
 
 	belongs_to :childmenu
+	belongs_to :user
 
 	def rubycode
 		raw_text = self.text
