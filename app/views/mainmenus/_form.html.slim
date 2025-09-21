@@ -1,0 +1,22 @@
+= form_for @mainmenu do |form|
+  - if @mainmenu.errors.any?
+    div class="alert alert-danger"
+      h4
+        = pluralize(@mainmenu.errors.count, "error")
+        '
+        |Ошибка сохранения:
+
+    - @mainmenu.errors.full_messages.each do |msg|
+      div= msg
+
+  = form.hidden_field :mainmenu_id, value: @mainmenu.id
+  .form-group
+    = form.text_field :title, class: "form-control"
+
+  .form-group
+    = form.text_area :text, class: 'form-control ckeditor'
+
+  .form-group
+    = form.submit class: "btn btn-success"
+
+

@@ -1,18 +1,30 @@
-.info
-  h4
-    | Mainmenus#show
-    | Find me in app/views/mainmenus/show.html.haml
-
-
 - flash.each do |name, msg|
   = content_tag :div, msg, class: "alert alert-info"
 
+div class="panel panel-info"
+  div class="panel-heading"
+    h3 class="panel-title"
+      = @mainmenu.title
 
-h4
-  = @show_mainmenu.title
+  div class="panel-body"
+    = @mainmenu.text
 
-= @show_mainmenu.text.html_safe
-br
-= link_to "Edit", edit_mainmenu_path
-= " | "
-= link_to "Add mainmenu", new_mainmenu_path(:parent_id => @show_mainmenu)
+    div
+      = link_to "Add Main Catagory", new_mainmenu_path(parent_id: @mainmenu.id)
+      span.links_separator= " | "
+      = link_to "Edit", edit_mainmenu_path(@mainmenu)
+      span.links_separator= " | "
+      = link_to "Destroy", mainmenu_path(@mainmenu), confirm: "Are you sure?", method: :delete
+
+    h3
+      | Categories
+
+    - if @mainmenu.childmenus.present?
+      div class="childmenu-class"
+        ul
+          - @mainmenu.childmenus.each do |childmenu|
+            li
+              = link_to childmenu.title, childmenu_path(childmenu), class: "child-menu-title"
+              span class="links_separator" |
+              - if current_user&.admin?
+              = link_to "delete", childmenu, method: :delete, class: "link-to-new-mainmenu"

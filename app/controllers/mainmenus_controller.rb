@@ -1,73 +1,67 @@
 class MainmenusController < ApplicationController
-	include ApplicationHelper
-	before_action :get_mainmenus
+  include ApplicationHelper
+  before_action :set_mainmenu, only: [:show, :edit, :update, :destroy]
 
   def index
-		@mainmenus = Mainmenu.all
+    @mainmenus = Mainmenu.all
   end
 
   def show
-	  @show_mainmenu = Mainmenu.find(params[:id])
   end
 
   def edit
-	  @edit_mainmenu = Mainmenu.find(params[:id])
   end
 
-	def update
-		@update = Mainmenu.find(params[:id])
-		if @update.update_attributes(params.require(:mainmenu).permit(:title, :text))
-			redirect_to @update, notice: 'Mainmenu was successfully updated.'
-		else
-			render action: "edit"
-		end
-	end
+  def update
+    if @mainmenu.update_attributes(params.require(:mainmenu).permit(:title, :text))
+      redirect_to @mainmenu, notice: 'Mainmenu was successfully updated.'
+    else
+      render action: "edit"
+    end
+  end
 
   def new
-	  @mainmenu = Mainmenu.new(:parent_id => params[:id])
+    @mainmenu = Mainmenu.new(:parent_id => params[:id])
   end
 
   def create
-		@create_mainmenu = Mainmenu.new(params.require(:mainmenu).permit(:parent_id, :title, :text))
-		if !params.require(:mainmenu).permit(:parent_id).nil?
-			@create_mainmenu.style_class = "nested_mainmenus site-dropdown-menu"
-		else
-			@create_mainmenu.style_class = "mmain"
-		end
-		if @create_mainmenu.save
-			flash[:success] = 'Your children mainmenu was successfully added!'
-			redirect_to @create_mainmenu
-		else
-			render 'new'
-		end
-
-
+    @create_mainmenu = Mainmenu.new(params.require(:mainmenu).permit(:parent_id, :title, :text))
+    if !params.require(:mainmenu).permit(:parent_id).nil?
+      @create_mainmenu.style_class = "nested_mainmenus site-dropdown-menu"
+    else
+      @create_mainmenu.style_class = "mmain"
+    end
+    if @create_mainmenu.save
+      flash[:success] = 'Your children mainmenu was successfully added!'
+      redirect_to @create_mainmenu
+    else
+      render 'new'
+    end
   end
 
-	def add
+  def add
 
-	end
+  end
 
   def destroy
-	  @delete = Mainmenu.find(params[:id])
-		if @delete.destroy
-			flash[:success] = 'Mainmenu deleted'
-			redirect_to root_path
-		else
-			flash[:success] = 'Delete error'
-			render 'new'
-		end
+    if @mainmenu.destroy
+      flash[:success] = 'Mainmenu deleted'
+      redirect_to root_path
+    else
+      flash[:success] = 'Delete error'
+      render 'new'
+    end
   end
 
-	private
+private
 
-	def mainmenu_params
-		params.require(:mainmenu).permit(:title, :text)
-	end
+  def mainmenu_params
+    params.require(:mainmenu).permit(:title, :text)
+  end
 
-	def get_mainmenus
-		@mainmenu = Mainmenu.all
-	end
+  def set_mainmenu
+    @mainmenu = Mainmenu.find(params[:id])
+  end
 end
 
 
