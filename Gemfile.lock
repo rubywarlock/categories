@@ -126,7 +126,7 @@ GEM
       nokogiri (~> 1)
       rake
     mini_mime (1.0.0)
-    mini_portile2 (2.4.0)
+    mini_portile2 (2.8.9)
     minitest (5.11.3)
     multi_json (1.13.1)
     net-scp (1.2.1)
@@ -134,8 +134,9 @@ GEM
     net-ssh (4.2.0)
     nifty-generators (0.4.6)
     nio4r (2.3.1)
-    nokogiri (1.10.8)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.15.7)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     paperclip (6.0.0)
       activemodel (>= 4.2.0)
@@ -146,6 +147,7 @@ GEM
     pg (1.0.0)
     puma (6.6.1)
       nio4r (~> 2.0)
+    racc (1.8.1)
     rack (2.0.5)
     rack-proxy (0.6.5)
       rack
