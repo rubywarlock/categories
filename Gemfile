@@ -53,7 +53,7 @@ group :production do
 end
 
 group :development, :test do
-  gem 'sqlite3', '1.6.9'
+  gem 'sqlite3', '1.3.13'
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
