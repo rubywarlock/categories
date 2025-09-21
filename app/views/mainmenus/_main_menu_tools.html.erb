@@ -1,5 +1,5 @@
 <div class="main-menu-tools">
-  <span class="mainmenu_created_at"><%= mainmenu.created_at.strftime("%m %d %Y") %></span>
+  <span class="mainmenu_created_at"><%= time_ago_in_words mainmenu.created_at %></span>
   <%= link_to "Add mainmenu", new_mainmenu_path(mainmenu), class: "link-to-new-mainmenu" %>
   <span class="links_separator"> | </span>
   <%= link_to "Add childmenu", new_childmenu_path(mainmenu), class: "link-to-new-mainmenu" %>
