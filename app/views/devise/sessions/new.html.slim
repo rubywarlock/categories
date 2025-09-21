@@ -1,0 +1,25 @@
+- flash.each do |name, msg|
+  = content_tag :div, msg, class: "alert alert-info"
+
+h2 Log in
+
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  div class="form-group"
+    = f.label :email, class: "col-sm-3 control-label"
+    = f.email_field :email, class: "form-control", autofocus: true
+
+  div class="form-group"
+    = f.label :password, class: "col-sm-3 control-label"
+    = f.password_field :password, class: "form-control", autocomplete: "off"
+
+  - if devise_mapping.rememberable?
+    div class="form-group"
+      div class="checkbox"
+        label
+          = f.check_box :remember_me
+          |Remember Me
+
+  div class="form-group"
+    = f.submit "Log in", class: "btn btn-success"
+
+= render "devise/shared/links"
