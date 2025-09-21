@@ -9,12 +9,13 @@ div class="panel panel-info"
   div class="panel-body"
     = @mainmenu.text
 
-    div
-      = link_to "Add Main Catagory", new_mainmenu_path(parent_id: @mainmenu.id)
-      span.links_separator= " | "
-      = link_to "Edit", edit_mainmenu_path(@mainmenu)
-      span.links_separator= " | "
-      = link_to "Destroy", mainmenu_path(@mainmenu), confirm: "Are you sure?", method: :delete
+    - if current_user_have_access?(current_user, @mainmenu)
+      div
+        = link_to "Add Main Catagory", new_mainmenu_path(parent_id: @mainmenu.id)
+        span.links_separator= " | "
+        = link_to "Edit", edit_mainmenu_path(@mainmenu)
+        span.links_separator= " | "
+        = link_to "Destroy", mainmenu_path(@mainmenu), confirm: "Are you sure?", method: :delete
 
     h3
       | Categories
@@ -25,6 +26,11 @@ div class="panel panel-info"
           - @mainmenu.childmenus.each do |childmenu|
             li
               = link_to childmenu.title, childmenu_path(childmenu), class: "child-menu-title"
-              span class="links_separator" |
-              - if current_user&.admin?
-              = link_to "delete", childmenu, method: :delete, class: "link-to-new-mainmenu"
+              span class="links_separator"
+              - if current_user_have_access?(current_user, childmenu)
+                = " | "
+                = link_to "delete", childmenu, method: :delete, class: "link-to-new-mainmenu"
+
+  div class="panel-footer"
+    - if controller.controller_name == "mainmenus" && controller.action_name == "show"
+      = link_to "Back", :back

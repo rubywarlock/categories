@@ -9,12 +9,13 @@ div class="panel panel-info"
   div class="panel-body"
     = @childmenu.text
 
-    div
-      = link_to "Add post", new_post_path(@childmenu)
-      span.links_separator= " | "
-      = link_to "Edit", edit_childmenu_path(@childmenu)
-      span.links_separator= " | "
-      = link_to "Destroy", childmenu_path(@childmenu), confirm: "Are you sure?", method: :delete
+    - if current_user_have_access?(current_user, @childmenu)
+      div
+        = link_to "Add post", new_post_path(@childmenu)
+        span.links_separator= " | "
+        = link_to "Edit", edit_childmenu_path(@childmenu)
+        span.links_separator= " | "
+        = link_to "Destroy", childmenu_path(@childmenu), confirm: "Are you sure?", method: :delete
 
     h3
       | Posts
