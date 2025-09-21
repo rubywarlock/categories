@@ -1,0 +1,8 @@
+- if mainmenu.childmenus.count > 0
+  div class="childmenu-class"
+    ul
+      - mainmenu.childmenus.each do |cm|
+        li
+          = link_to cm.title, cm, class: "child-menu-title"
+          span class="links_separator" = " | "
+          = link_to "delete", cm, method: :delete, class: "link-to-new-mainmenu"
