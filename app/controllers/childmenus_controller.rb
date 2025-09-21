@@ -9,6 +9,8 @@ class ChildmenusController < ApplicationController
   end
 
   def create
+    @childmenu = Childmenu.new(childmenu_params)
+
     if @childmenu.save
       redirect_to @childmenu, notice: 'Childmenu was successfully updated.'
     else

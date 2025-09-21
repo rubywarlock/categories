@@ -1,7 +1,6 @@
 class HomePagesController < ApplicationController
   def index
-	  #@pages = Page.all
-    @mainmenus = Mainmenu.all#(:level).select(:level)
+    @mainmenus = Mainmenu.all
   end
 
   def admin
