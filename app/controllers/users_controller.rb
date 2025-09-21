@@ -6,14 +6,17 @@
   # GET /users.json
   def index
     per_page = 15
+
     if !params[:users].nil?
       from = params[:users][:from]
       to   = params[:users][:to]
 
       query_array = []
 
+      # создается массив для SQL запроса,
+      # на основе параметров подставляется AND и BETWEEN
       from.each do |f|
-        if !f[1].empty?
+        if f[1].present?
           # ниже делается строка запроса для выборки по диапозону или с простым условием
           # to[f[0]].empty? ? query_array.push("#{f[0]} = #{f[1]}") : to[f[0]] >= f[1] ? query_array.push("#{f[0]} BETWEEN #{f[1]} and #{to[f[0]]}") : "no"
 
