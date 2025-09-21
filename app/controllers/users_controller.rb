@@ -1,47 +1,48 @@
-class UsersController < ApplicationController
+  class UsersController < ApplicationController
+  before_action :admin?, exclude: :show
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
   def index
     per_page = 15
-	  if !params[:users].nil?
-		  from = params[:users][:from]
-		  to   = params[:users][:to]
+    if !params[:users].nil?
+      from = params[:users][:from]
+      to   = params[:users][:to]
 
-		  p = []
+      p = []
 
-		  from.each do |f|
-			  if !f[1].empty?
-				  #ниже делается строка запроса для выборки по диапозону или с простым условием
-				  #to[f[0]].empty? ? p.push("#{f[0]} = #{f[1]}") : to[f[0]] >= f[1] ? p.push("#{f[0]} BETWEEN #{f[1]} and #{to[f[0]]}") : "no"
+      from.each do |f|
+        if !f[1].empty?
+          # ниже делается строка запроса для выборки по диапозону или с простым условием
+          # to[f[0]].empty? ? p.push("#{f[0]} = #{f[1]}") : to[f[0]] >= f[1] ? p.push("#{f[0]} BETWEEN #{f[1]} and #{to[f[0]]}") : "no"
 
           if to[f[0]].empty?
-	          p.push("#{f[0]} = #{f[1]}")
+            p.push("#{f[0]} = #{f[1]}")
           else
-						if to[f[0]] >= f[1]
-							p.push("#{f[0]} BETWEEN #{f[1]} and #{to[f[0]]}")
-						else
-							"no"
-						end
+            if to[f[0]] >= f[1]
+              p.push("#{f[0]} BETWEEN #{f[1]} and #{to[f[0]]}")
+            else
+              "no"
+            end
           end
 
-			  end
-		  end
+        end
+      end
 
-		  p = p.join(" AND ")
+      p = p.join(" AND ")
 
       @users = User.where(p).order("age desc").paginate(page: params[:page], :per_page => per_page)
-	  else
-		  @users = User.paginate(page: params[:page], :per_page => per_page)
-	  end
+    else
+      @users = User.paginate(page: params[:page], :per_page => per_page)
+    end
   end
 
   def find
-		respond_to do |format|
-			format.html
-			format.js
-		end
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /users/1
@@ -98,28 +99,30 @@ class UsersController < ApplicationController
     end
   end
 
-=begin
-	def following?(other_page)
-		relationships.find_by(followed_id: other_page.id)
-	end
-
-	def follow!(other_page)
-	  relationships.create!(followed_id: other_page.id)
-	end
-
-	def unfollow!(other_page)
-		relationships.find_by(followed_id: other_page.id).destroy!
-	end
-=end
+  #   def following?(other_page)
+  #     relationships.find_by(followed_id: other_page.id)
+  #   end
+  #
+  #   def follow!(other_page)
+  #     relationships.create!(followed_id: other_page.id)
+  #   end
+  #
+  #   def unfollow!(other_page)
+  #     relationships.find_by(followed_id: other_page.id).destroy!
+  #   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:age, :pay, :stature, :weigh)
-    end
-end
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.require(:user).permit(:age, :pay, :stature, :weigh)
+  end
+
+  def admin?
+
+  end
+  end
